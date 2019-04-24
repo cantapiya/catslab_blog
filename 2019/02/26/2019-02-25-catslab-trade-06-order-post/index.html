@@ -20,7 +20,7 @@
 <meta property="og:description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(exchange, currency, order_type, quantity, price, fiat): A.6.1.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/image/catslab.png">
-<meta property="og:updated_time" content="2019-04-24T09:01:41.447Z">
+<meta property="og:updated_time" content="2019-04-24T09:13:18.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A.6 Order 객체 생성 및 사용 예시">
 <meta name="twitter:description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(exchange, currency, order_type, quantity, price, fiat): A.6.1.">
@@ -171,8 +171,8 @@
 <p><strong>A.6.6. fiat (str)</strong><br>거래소에서 사용하는 기축화폐를 입력합니다.<br>(예: “krw”, “usd”, … )</p>
 <p>Order 객체의 사용 예시는 다음과 같습니다.</p>
 <p>매수주문 (현재 가격으로 주문): </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">price = data[f’&#123;currency]_&#123;int(interval)&#125;’][‘close’].loc[data[f’&#123;currency]_&#123;int(interval)&#125;’].index[<span class="number">-1</span>]]</span><br><span class="line">buy_order = Order(exchange=<span class="string">'coinone'</span>, currency=’xrp’, order_type=’BUY’, fiat=’krw’, price=price, quantity=<span class="number">2.5</span>)</span><br></pre></td></tr></table></figure>
-<p>매도주문 (지정가 주문):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">sell_order = Order(exchange=<span class="string">'upbit'</span>, currency=’eth’, order_type=’SELL’, fiat=’krw’, price=<span class="number">150000</span>, quantity=<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">price = data[<span class="string">f'<span class="subst">&#123;currency]_&#123;int(interval)&#125;</span>'</span>][<span class="string">'close'</span>].loc[data[<span class="string">f'<span class="subst">&#123;currency]_&#123;int(interval)&#125;</span>'</span>].index[<span class="number">-1</span>]]</span><br><span class="line">buy_order = Order(exchange=<span class="string">'coinone'</span>, currency=<span class="string">'xrp'</span>, order_type=<span class="string">'BUY'</span>, fiat=<span class="string">'krw'</span>, price=price, quantity=<span class="number">2.5</span>)</span><br></pre></td></tr></table></figure>
+<p>매도주문 (지정가 주문):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">sell_order = Order(exchange=<span class="string">'upbit'</span>, currency=<span class="string">'eth'</span>, order_type=<span class="string">'SELL'</span>, fiat=<span class="string">'krw'</span>, price=<span class="number">150000</span>, quantity=<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure></p>
 
         </div>
         <footer class="article-footer">
@@ -180,7 +180,7 @@
 
 
 
-    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/" data-id="cjuuzflt3000g5v9w8h3f32ve" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/" data-id="cjuuzpg96000gks9wq8somcj7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -261,7 +261,7 @@
         "description": "A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다.
 1class Order(exchange, currency, order_type, quantity, price, fiat):
 A.6.1."
-        "wordCount": 174
+        "wordCount": 185
     }
 </script>
 

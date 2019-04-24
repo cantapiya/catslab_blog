@@ -20,7 +20,7 @@
 <meta property="og:description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/image/catslab.png">
-<meta property="og:updated_time" content="2019-04-24T09:01:52.396Z">
+<meta property="og:updated_time" content="2019-04-24T09:15:26.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A.8 Order_list">
 <meta name="twitter:description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
@@ -165,7 +165,7 @@
 <p>order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Order 객체를 value값으로 하는 dictionary로 형태로 관리됩니다. </p>
 <p>주문한 수량의 전체가 체결이 되거나, 전체가 취소될 경우 order_list에서 제거가 되며, 자산의 업데이트가 진행됩니다. 부분 체결 및 부분 취소가 발생한 경우에도 자산의 업데이트가 진행되며, 미체결 수량이 존재하는 경우에는 remain_qty에 그 수량을 저장합니다. </p>
 <p>order_list에 대한 예시는 다음과 같습니다. coinone_bot이라는 BotContext에 저장되어 있는 order_list로, ‘iota’와 ‘xrp’에 관련된 미체결 주문 정보가 저장되어 있는 것을 볼 수 있습니다. </p>
-<p><img src="!--￼0--" alt="My helpful screenshot">{: width=”50%” height=”50%”}</p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56647672-ce261d80-66bc-11e9-913a-a99fe66470b1.png" alt="A.8 order_list Example1"></p>
 <p>Order 객체에 저장된 주문 정보들은 다음과 같습니다.</p>
 <p><strong>A.8.1. currency</strong><br>주문한 가상화폐의 명칭을 저장합니다.</p>
 <p><strong>A.8.2. fee</strong><br>주문한 수량을 기준으로 계산한 수수료에 대한 정보입니다. ‘order_type’이 ‘SELL’인 경우 ‘fee’에 저장된 값은 Bot에서 사용하는 거래소의 기축화폐에 해당합니다. </p>
@@ -182,7 +182,7 @@
 
 
 
-    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/" data-id="cjuuzflt6000j5v9wj38ehsxz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/" data-id="cjuuzpg9a000lks9wwj8eb8wc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -262,7 +262,7 @@
         "url": "https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/",
         "description": "A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다. 
 order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord"
-        "wordCount": 174
+        "wordCount": 172
     }
 </script>
 
