@@ -96,13 +96,19 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CATSLAB BLOG">
-<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/archives/index.html">
+  <meta name="description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A.8 Order_list">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
+<meta property="og:description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
 <meta property="og:locale" content="ko">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/!--￼0--">
+<meta property="og:updated_time" content="2019-02-25T08:59:24.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CATSLAB BLOG">
+<meta name="twitter:title" content="A.8 Order_list">
+<meta name="twitter:description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
+<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/!--￼0--">
 
 
 
@@ -110,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/archives/">
+  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/">
 
 
 
@@ -120,7 +126,7 @@
   };
 </script>
 
-  <title>아카이브 | CATSLAB BLOG</title>
+  <title>A.8 Order_list | CATSLAB BLOG</title>
   
 
 
@@ -168,7 +174,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,7 +250,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -265,22 +271,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -306,397 +296,215 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bychkim">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https:/cantapiya.github.io/catslab_blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CATSLAB BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">A.8 Order_list
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-02-26 04:57:08" itemprop="dateCreated datePublished" datetime="2019-02-26T04:57:08+09:00">2019-02-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-02-25 17:59:24" itemprop="dateModified" datetime="2019-02-25T17:59:24+09:00">2019-02-25</time>
+              
+            
+          </span>
+
           
-        
-        음..! 총 17개의 포스트 포스트를 마저 작성하세요
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="https:/cantapiya.github.io/catslab_blog/categories/catslab-trade/" itemprop="url" rel="index"><span itemprop="name">catslab trade</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/04/24/hello-world/" itemprop="url">
+          
             
-              <span itemprop="name">Hello World</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-24T09:56:01+09:00" content="2019-04-24">
-          04-24
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" itemprop="url">
-            
-              <span itemprop="name">B.1 BacktestContext의 생성</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T06:08:34+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" itemprop="url">
-            
-              <span itemprop="name">B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T06:08:34+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="A-8-order-list"><a href="#A-8-order-list" class="headerlink" title="A.8. order_list"></a>A.8. order_list</h2><p>Order 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다. </p>
+<p>order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Order 객체를 value값으로 하는 dictionary로 형태로 관리됩니다. </p>
+<p>주문한 수량의 전체가 체결이 되거나, 전체가 취소될 경우 order_list에서 제거가 되며, 자산의 업데이트가 진행됩니다. 부분 체결 및 부분 취소가 발생한 경우에도 자산의 업데이트가 진행되며, 미체결 수량이 존재하는 경우에는 remain_qty에 그 수량을 저장합니다. </p>
+<p>order_list에 대한 예시는 다음과 같습니다. coinone_bot이라는 BotContext에 저장되어 있는 order_list로, ‘iota’와 ‘xrp’에 관련된 미체결 주문 정보가 저장되어 있는 것을 볼 수 있습니다. </p>
+<p><img src="!--￼0--" alt="My helpful screenshot">{: width=”50%” height=”50%”}</p>
+<p>Order 객체에 저장된 주문 정보들은 다음과 같습니다.</p>
+<p><strong>A.8.1. currency</strong><br>주문한 가상화폐의 명칭을 저장합니다.</p>
+<p><strong>A.8.2. fee</strong><br>주문한 수량을 기준으로 계산한 수수료에 대한 정보입니다. ‘order_type’이 ‘SELL’인 경우 ‘fee’에 저장된 값은 Bot에서 사용하는 거래소의 기축화폐에 해당합니다. </p>
+<p><strong>A.8.3. fiat</strong><br>Bot에서 사용하는 거래소의 기축화폐의 정보입니다.</p>
+<p><strong>A.8.4. order_type</strong><br>매수 주문인지 매도 주문인지 구분하는 역할을 합니다.</p>
+<p><strong>A.8.5. price</strong><br>주문 가격에 대한 정보입니다.</p>
+<p><strong>A.8.6. quantity</strong><br>주문한 수량에 대한 정보입니다.</p>
+<p><strong>A.8.7. remain_qty</strong><br>주문한 수량에서 부분 체결이나 부분 취소가 발생하고 난 뒤의 미체결 된 주문 수량에 대한 정보입니다.</p>
+<p><strong>A.8.8. timestamp</strong><br>주문한 시간의 timestamp값에 대한 정보입니다.</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/" itemprop="url">
-            
-              <span itemprop="name">B.8 plot 함수의 사용 방법 및 사용 예시</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T06:08:34+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-run-post/" itemprop="url">
-            
-              <span itemprop="name">B.2 Backtest 실행</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T06:08:34+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-base-post/" itemprop="url">
-            
-              <span itemprop="name">B.0 Backtest 기본</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T05:48:59+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-order-post/" itemprop="url">
-            
-              <span itemprop="name">A.7 set_order 함수의 사용과 예시</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T05:20:02+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-others-post/" itemprop="url">
-            
-              <span itemprop="name">A.10. 부가적인 기능의 함수들과 사용 예시</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T05:15:21+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-cancel-post/" itemprop="url">
-            
-              <span itemprop="name">A.9 set_cancel 함수의 사용과 사용 예시</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T05:15:21+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/" itemprop="url">
-            
-              <span itemprop="name">A.8 Order_list</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T04:57:08+09:00" content="2019-02-26">
-          02-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-post/" rel="next" title="A.6 Order 객체 생성 및 사용 예시">
+                <i class="fa fa-chevron-left"></i> A.6 Order 객체 생성 및 사용 예시
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-cancel-post/" rel="prev" title="A.9 set_cancel 함수의 사용과 사용 예시">
+                A.9 set_cancel 함수의 사용과 사용 예시 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="https:/cantapiya.github.io/catslab_blog/archives/page/2/">2</a><a class="extend next" rel="next" href="https:/cantapiya.github.io/catslab_blog/archives/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -716,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            목차
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            흝어보기
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -790,6 +607,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-8-order-list"><span class="nav-number">1.</span> <span class="nav-text">A.8. order_list</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -918,6 +752,10 @@
 
 
   
+  <script src="https:/cantapiya.github.io/catslab_blog/js/scrollspy.js?v=7.1.0"></script>
+<script src="https:/cantapiya.github.io/catslab_blog/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -933,6 +771,8 @@
 
   
 
+
+  
 
 
   

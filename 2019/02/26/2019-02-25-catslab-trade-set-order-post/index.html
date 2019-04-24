@@ -96,17 +96,19 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="A.7. set_order 함수의 사용과 사용과 예시Order 객체를 이용하여 생성한 주문들을 거래소 API를 이용하여 거래소에 전송을 하기 위한 함수입니다.  주문내역에 대한 정보를 저장하는 Order 객체와, 주문 시간을 지정하여 list에 추가한 뒤, 내부 함수를 이용하여 list 저장되어 있는 주문을 거래소로 전송을 합니다.  거래소로 전송함과 동시">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/04/24/hello-world/index.html">
+<meta property="og:title" content="A.7 set_order 함수의 사용과 예시">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-order-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="A.7. set_order 함수의 사용과 사용과 예시Order 객체를 이용하여 생성한 주문들을 거래소 API를 이용하여 거래소에 전송을 하기 위한 함수입니다.  주문내역에 대한 정보를 저장하는 Order 객체와, 주문 시간을 지정하여 list에 추가한 뒤, 내부 함수를 이용하여 list 저장되어 있는 주문을 거래소로 전송을 합니다.  거래소로 전송함과 동시">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-04-24T00:56:01.379Z">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-order-post/!--￼2--">
+<meta property="og:updated_time" content="2019-02-25T10:49:10.200Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="A.7 set_order 함수의 사용과 예시">
+<meta name="twitter:description" content="A.7. set_order 함수의 사용과 사용과 예시Order 객체를 이용하여 생성한 주문들을 거래소 API를 이용하여 거래소에 전송을 하기 위한 함수입니다.  주문내역에 대한 정보를 저장하는 Order 객체와, 주문 시간을 지정하여 list에 추가한 뒤, 내부 함수를 이용하여 list 저장되어 있는 주문을 거래소로 전송을 합니다.  거래소로 전송함과 동시">
+<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-order-post/!--￼2--">
 
 
 
@@ -114,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/04/24/hello-world/">
+  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-order-post/">
 
 
 
@@ -124,7 +126,7 @@
   };
 </script>
 
-  <title>Hello World | CATSLAB BLOG</title>
+  <title>A.7 set_order 함수의 사용과 예시 | CATSLAB BLOG</title>
   
 
 
@@ -310,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/04/24/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-set-order-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bychkim">
@@ -327,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">A.7 set_order 함수의 사용과 예시
 
               
             
@@ -353,12 +355,46 @@
                 
               
 
-              <time title="Post created: 2019-04-24 09:56:01" itemprop="dateCreated datePublished" datetime="2019-04-24T09:56:01+09:00">2019-04-24</time>
+              <time title="Post created: 2019-02-26 05:20:02" itemprop="dateCreated datePublished" datetime="2019-02-26T05:20:02+09:00">2019-02-26</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-02-25 19:49:10" itemprop="dateModified" datetime="2019-02-25T19:49:10+09:00">2019-02-25</time>
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="https:/cantapiya.github.io/catslab_blog/categories/catslab-trade/" itemprop="url" rel="index"><span itemprop="name">catslab trade</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -388,15 +424,15 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="A-7-set-order-함수의-사용과-사용과-예시"><a href="#A-7-set-order-함수의-사용과-사용과-예시" class="headerlink" title="A.7. set_order 함수의 사용과 사용과 예시"></a>A.7. set_order 함수의 사용과 사용과 예시</h2><p>Order 객체를 이용하여 생성한 주문들을 거래소 API를 이용하여 거래소에 전송을 하기 위한 함수입니다. </p>
+<p>주문내역에 대한 정보를 저장하는 Order 객체와, 주문 시간을 지정하여 list에 추가한 뒤, 내부 함수를 이용하여 list 저장되어 있는 주문을 거래소로 전송을 합니다. </p>
+<p>거래소로 전송함과 동시에 자산의 보유량을 업데이트하여 변경된 정보를 저장합니다. 보유 자산을 업데이트할 때는 수수료를 고려하여 적용이 됩니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_order</span><span class="params">(self, exchange, o, t=None)</span>:</span></span><br></pre></td></tr></table></figure>
+<p><strong>A.7.1. exchange (str)</strong><br>Bot에서 사용하는 거래소의 명칭을 입력합니다.</p>
+<p><strong>A.7.2. o (object)</strong><br>make_orders에서 Order 객체를 사용하여 생성하며, 주문할 가상화폐의 종류, 주문 유형, 주문 수량, 주문 가격, 거래소에서 사용하는 기축화폐에 대한 정보를 포함합니다.</p>
+<p><strong>A.7.3. t (datetime.datetime)</strong><br>주문을 요청하는 시간을 입력합니다. 별도로 지정하지 않는 경우 현재시간을 이용하여 주문 시간이 정해집니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 현재 시간으로 주문</span></span><br><span class="line">price = data[f’&#123;currency]_&#123;int(interval)&#125;’][‘close’].loc[data[f’&#123;currency]_&#123;int(interval)&#125;’].index[<span class="number">-1</span>]]</span><br><span class="line">buy_order = Order(currency=’xrp’, order_type=’BUY’, fiat=’krw’, price=price, quantity=<span class="number">1.2345</span>)</span><br><span class="line">order_time = datetime.now()</span><br><span class="line">set_order(exchange=’coinone’, o=buy_order, t=order_time)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 주문 신호가 들어온 캔들의 시간으로 주문</span></span><br><span class="line">sell_order = Order(currency=’xrp’, order_type=’SELL’, fiat=’krw’, price=<span class="number">342</span>, quantity=<span class="number">5.4321</span>)</span><br><span class="line">t = data[f’&#123;currency]_&#123;int(interval)&#125;’].index[<span class="number">-1</span>]</span><br><span class="line">set_order(exchange=’coinone’, o=sell_order, t=t)</span><br></pre></td></tr></table></figure>
+<p><img src="!--￼2--" alt="My helpfule screenshot"></p>
 
       
     </div>
@@ -427,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" rel="next" title="B.1 BacktestContext의 생성">
-                <i class="fa fa-chevron-left"></i> B.1 BacktestContext의 생성
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-others-post/" rel="next" title="A.10. 부가적인 기능의 함수들과 사용 예시">
+                <i class="fa fa-chevron-left"></i> A.10. 부가적인 기능의 함수들과 사용 예시
               </a>
             
           </div>
@@ -436,6 +472,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-base-post/" rel="prev" title="B.0 Backtest 기본">
+                B.0 Backtest 기본 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-7-set-order-함수의-사용과-사용과-예시"><span class="nav-number">1.</span> <span class="nav-text">A.7. set_order 함수의 사용과 사용과 예시</span></a></li></ol></div>
             
 
           </div>

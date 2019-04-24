@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(currency, order_type, quantity, price, fiat): A.6.1. currency">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/04/24/hello-world/index.html">
+<meta property="og:title" content="A.6 Order 객체 생성 및 사용 예시">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(currency, order_type, quantity, price, fiat): A.6.1. currency">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-04-24T00:56:01.379Z">
+<meta property="og:updated_time" content="2019-02-25T08:58:28.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="A.6 Order 객체 생성 및 사용 예시">
+<meta name="twitter:description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(currency, order_type, quantity, price, fiat): A.6.1. currency">
 
 
 
@@ -114,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/04/24/hello-world/">
+  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-post/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Hello World | CATSLAB BLOG</title>
+  <title>A.6 Order 객체 생성 및 사용 예시 | CATSLAB BLOG</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/04/24/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bychkim">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">A.6 Order 객체 생성 및 사용 예시
 
               
             
@@ -353,12 +353,46 @@
                 
               
 
-              <time title="Post created: 2019-04-24 09:56:01" itemprop="dateCreated datePublished" datetime="2019-04-24T09:56:01+09:00">2019-04-24</time>
+              <time title="Post created: 2019-02-26 04:48:58" itemprop="dateCreated datePublished" datetime="2019-02-26T04:48:58+09:00">2019-02-26</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-02-25 17:58:28" itemprop="dateModified" datetime="2019-02-25T17:58:28+09:00">2019-02-25</time>
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="https:/cantapiya.github.io/catslab_blog/categories/catslab-trade/" itemprop="url" rel="index"><span itemprop="name">catslab trade</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -388,15 +422,17 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="A-6-Order-객체-생성-및-사용-예시"><a href="#A-6-Order-객체-생성-및-사용-예시" class="headerlink" title="A.6. Order 객체 생성 및 사용 예시"></a>A.6. Order 객체 생성 및 사용 예시</h2><p>거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span><span class="params">(currency, order_type, quantity, price, fiat)</span>:</span></span><br></pre></td></tr></table></figure>
+<p><strong>A.6.1. currency (str)</strong><br>거래소에 주문을 넣을 가상 화폐의 명칭을 입력합니다.<br>(예: “btc”, “eth”, “xrp”, … )</p>
+<p><strong>A.6.2. order_type (str)</strong><br>매수와 매도를 구분하기 위한 parameter입니다.<br>매수 주문의 경우 “BUY”, 매도 주문의 경우 “SELL” 타입으로 입력합니다.</p>
+<p><strong>A.6.3. quantity (float)</strong><br>주문할 가상화폐의 수량을 입력합니다.</p>
+<p><strong>A.6.4. price (int)</strong><br>주문할 가상화폐의 가격을 입력합니다.</p>
+<p><strong>A.6.5. fiat (str)</strong><br>거래소에서 사용하는 기축화폐를 입력합니다.<br>(예: “krw”, “usd”, … )</p>
+<p>Order 객체의 사용 예시는 다음과 같습니다.</p>
+<p>매수주문 (현재 가격으로 주문): </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">price = data[f’&#123;currency]_&#123;int(interval)&#125;’][‘close’].loc[data[f’&#123;currency]_&#123;int(interval)&#125;’].index[<span class="number">-1</span>]]</span><br><span class="line">buy_order = Order(currency=’xrp’, order_type=’BUY’, fiat=’krw’, price=price, quantity=<span class="number">1.2345</span>)</span><br></pre></td></tr></table></figure>
+<p>매도주문 (지정가 주문):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">sell_order = Order(currency=’xrp’, order_type=’SELL’, fiat=’krw’, price=<span class="number">342</span>, quantity=<span class="number">5.4321</span>)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -427,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" rel="next" title="B.1 BacktestContext의 생성">
-                <i class="fa fa-chevron-left"></i> B.1 BacktestContext의 생성
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-run-strategy-post/" rel="next" title="A.4 run_strategy 함수 작성 및 예시">
+                <i class="fa fa-chevron-left"></i> A.4 run_strategy 함수 작성 및 예시
               </a>
             
           </div>
@@ -436,6 +472,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-order-list-post/" rel="prev" title="A.8 Order_list">
+                A.8 Order_list <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-6-Order-객체-생성-및-사용-예시"><span class="nav-number">1.</span> <span class="nav-text">A.6. Order 객체 생성 및 사용 예시</span></a></li></ol></div>
             
 
           </div>

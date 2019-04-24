@@ -96,17 +96,20 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="B.8. plot 함수의 사용 방법 및 사용 예시Result 객체를 이용하여 사용할 수 있는 plot 함수는 백테스트에 이용한 가상화폐의 가격(종가 기준)의 변화와 백테스트 과정에서 거래가 발생한 시점마다 저장 되는 평가가격을 기반으로 자산의 변화를 도식화시켜주는 함수입니다. 이 함수의 사용 방법은 다음과 같습니다. 1def plot(add_marker,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/04/24/hello-world/index.html">
+<meta property="og:title" content="B.8 plot 함수의 사용 방법 및 사용 예시">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="B.8. plot 함수의 사용 방법 및 사용 예시Result 객체를 이용하여 사용할 수 있는 plot 함수는 백테스트에 이용한 가상화폐의 가격(종가 기준)의 변화와 백테스트 과정에서 거래가 발생한 시점마다 저장 되는 평가가격을 기반으로 자산의 변화를 도식화시켜주는 함수입니다. 이 함수의 사용 방법은 다음과 같습니다. 1def plot(add_marker,">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-04-24T00:56:01.379Z">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/!--￼1--">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/!--￼2--">
+<meta property="og:updated_time" content="2019-02-25T09:06:33.530Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="B.8 plot 함수의 사용 방법 및 사용 예시">
+<meta name="twitter:description" content="B.8. plot 함수의 사용 방법 및 사용 예시Result 객체를 이용하여 사용할 수 있는 plot 함수는 백테스트에 이용한 가상화폐의 가격(종가 기준)의 변화와 백테스트 과정에서 거래가 발생한 시점마다 저장 되는 평가가격을 기반으로 자산의 변화를 도식화시켜주는 함수입니다. 이 함수의 사용 방법은 다음과 같습니다. 1def plot(add_marker,">
+<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/!--￼1--">
 
 
 
@@ -114,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/04/24/hello-world/">
+  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/">
 
 
 
@@ -124,7 +127,7 @@
   };
 </script>
 
-  <title>Hello World | CATSLAB BLOG</title>
+  <title>B.8 plot 함수의 사용 방법 및 사용 예시 | CATSLAB BLOG</title>
   
 
 
@@ -310,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/04/24/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bychkim">
@@ -327,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">B.8 plot 함수의 사용 방법 및 사용 예시
 
               
             
@@ -353,12 +356,46 @@
                 
               
 
-              <time title="Post created: 2019-04-24 09:56:01" itemprop="dateCreated datePublished" datetime="2019-04-24T09:56:01+09:00">2019-04-24</time>
+              <time title="Post created: 2019-02-26 06:08:34" itemprop="dateCreated datePublished" datetime="2019-02-26T06:08:34+09:00">2019-02-26</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-02-25 18:06:33" itemprop="dateModified" datetime="2019-02-25T18:06:33+09:00">2019-02-25</time>
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="https:/cantapiya.github.io/catslab_blog/categories/catslab-backtest-Result/" itemprop="url" rel="index"><span itemprop="name">catslab backtest Result</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -388,15 +425,15 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="B-8-plot-함수의-사용-방법-및-사용-예시"><a href="#B-8-plot-함수의-사용-방법-및-사용-예시" class="headerlink" title="B.8. plot 함수의 사용 방법 및 사용 예시"></a>B.8. plot 함수의 사용 방법 및 사용 예시</h2><p>Result 객체를 이용하여 사용할 수 있는 plot 함수는 백테스트에 이용한 가상화폐의 가격(종가 기준)의 변화와 백테스트 과정에서 거래가 발생한 시점마다 저장 되는 평가가격을 기반으로 자산의 변화를 도식화시켜주는 함수입니다. 이 함수의 사용 방법은 다음과 같습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot</span><span class="params">(add_marker, current_list, main_interval)</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>B.8.1. add_marker (bool)</strong><br>거래가 발생하는 시점을 매수와 매도를 구분하여 marker로 표시할지에 대한 여부를 입력합니다. </p>
+<p>plot 함수는 기본적으로 백테스트 기간 동안 거래에 이용한 가상화폐의 가격 변화 그래프를 보여주는데, add_marker=True로 입력하는 경우 거래가 발생한 매 시점의 가격이 매수주문과 매도주문을 구분하여 가격 변화 그래프 위에 표시됩니다.</p>
+<p><strong>B.8.2. currenct_list</strong><br>그래프를 그릴 때, 사용자가 도식화하고자 하는 가상화폐의 종류를 입력합니다. </p>
+<p>한 가지 가상화폐만 입력할 수도 있고, 여러 개를 입력하는 경우 여러 가상화폐의 가격 변화를 하나의 그래프에 동시에 나타낼 수도 있습니다.</p>
+<p><strong>B.8.3. main_interval</strong><br>입력한 가상화폐의 가격 변화를 종가를 기준으로 하여 그래프를 그리는데, 종가가격의 기준이 되는 분봉을 입력하는 parameter입니다.  </p>
+<p>plot 함수의 사용 예시는 다음과 같습니다.</p>
+<p><img src="!--￼1--" alt="My helpful screenshot">{: width=”80%” height=”80%”}<br><img src="!--￼2--" alt="My helpful screenshot">{: width=”80%” height=”80%”}</p>
 
       
     </div>
@@ -427,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" rel="next" title="B.1 BacktestContext의 생성">
-                <i class="fa fa-chevron-left"></i> B.1 BacktestContext의 생성
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-run-post/" rel="next" title="B.2 Backtest 실행">
+                <i class="fa fa-chevron-left"></i> B.2 Backtest 실행
               </a>
             
           </div>
@@ -436,6 +473,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" rel="prev" title="B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성">
+                B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#B-8-plot-함수의-사용-방법-및-사용-예시"><span class="nav-number">1.</span> <span class="nav-text">B.8. plot 함수의 사용 방법 및 사용 예시</span></a></li></ol></div>
             
 
           </div>

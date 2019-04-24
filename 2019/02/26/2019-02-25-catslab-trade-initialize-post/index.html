@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="ko">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https:/cantapiya.github.io/catslab_blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="https:/cantapiya.github.io/catslab_blog/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https:/cantapiya.github.io/catslab_blog/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https:/cantapiya.github.io/catslab_blog/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="https:/cantapiya.github.io/catslab_blog/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="https:/cantapiya.github.io/catslab_blog/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'https://cantapiya.github.io/catslab_blog/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &amp;#123;&quot;EXCHANGE_NAME_1&quot;: &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A.3 Initialze의 작성 및 사용 예시">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-initialize-post/index.html">
+<meta property="og:site_name" content="CATSLAB BLOG">
+<meta property="og:description" content="A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &amp;#123;&quot;EXCHANGE_NAME_1&quot;: &amp;#123;">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-02-25T10:29:46.326Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A.3 Initialze의 작성 및 사용 예시">
+<meta name="twitter:description" content="A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &amp;#123;&quot;EXCHANGE_NAME_1&quot;: &amp;#123;">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-initialize-post/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>A.3 Initialze의 작성 및 사용 예시 | CATSLAB BLOG</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="ko">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://cantapiya.github.io/catslab_blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CATSLAB BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Descriptions for CATSLAB package and Kubernetes Settings</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https:/cantapiya.github.io/catslab_blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>홈</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https:/cantapiya.github.io/catslab_blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>카테고리</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https:/cantapiya.github.io/catslab_blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>아카이브</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cantapiya.github.io/catslab_bloghttps:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-initialize-post/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="bychkim">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https:/cantapiya.github.io/catslab_blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CATSLAB BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">A.3 Initialze의 작성 및 사용 예시
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">작성일</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-02-26 03:25:25" itemprop="dateCreated datePublished" datetime="2019-02-26T03:25:25+09:00">2019-02-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-02-25 19:29:46" itemprop="dateModified" datetime="2019-02-25T19:29:46+09:00">2019-02-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="https:/cantapiya.github.io/catslab_blog/categories/catslab-trade/" itemprop="url" rel="index"><span itemprop="name">catslab trade</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>A.3. initialize 함수의 작성 및 사용 예시</strong><br>Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(self)</span>:</span></span><br><span class="line">	self.context[‘trade_info’] = &#123;<span class="string">"EXCHANGE_NAME_1"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [], </span><br><span class="line">					<span class="string">"interval"</span>: [],</span><br><span class="line">					<span class="string">"fiat"</span>: FIAT</span><br><span class="line">					&#125;,</span><br><span class="line">				<span class="string">"EXCHANGE_NAME_2"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [],</span><br><span class="line">					<span class="string">"interval"</span>: [],</span><br><span class="line">					<span class="string">"fiat"</span>: FIAT</span><br><span class="line">					&#125;,</span><br><span class="line">			… , </span><br><span class="line">			</span><br><span class="line">				<span class="string">"safety_setting"</span>: &#123;</span><br><span class="line">					<span class="string">"profit_target"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: bool,</span><br><span class="line">					<span class="string">"ratio"</span>: RATIO</span><br><span class="line">					&#125;,</span><br><span class="line">				<span class="string">"stop_loss"</span>:&#123;</span><br><span class="line">					<span class="string">"checked"</span>: bool,</span><br><span class="line">					<span class="string">"ratio"</span>: RATIO</span><br><span class="line">					&#125;,</span><br><span class="line">				<span class="string">"stop_on_sell"</span>: bool,</span><br><span class="line">				<span class="string">"trailing_stop"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: bool,</span><br><span class="line">					<span class="string">"dec_ratio"</span>: RATIO,</span><br><span class="line">					<span class="string">"inc_ratio"</span>: RATIO</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure></p>
+<p>실제로 작성한 예제는 다음과 같습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(self)</span>:</span></span><br><span class="line">self.context[<span class="string">'trade_info'</span>] = &#123;<span class="string">"coinone"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [<span class="string">"xrp"</span>],</span><br><span class="line">					<span class="string">"interval"</span>: [<span class="number">1</span>],</span><br><span class="line">					<span class="string">"fiat"</span>: <span class="string">"krw"</span></span><br><span class="line">					&#125;, </span><br><span class="line">			<span class="string">"safety_setting"</span>: &#123;</span><br><span class="line">					<span class="string">"profit_target"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: <span class="literal">True</span>, </span><br><span class="line">					<span class="string">"ratio"</span>: <span class="number">0.10</span>,</span><br><span class="line">						&#125;, </span><br><span class="line">			<span class="string">"stop_loss"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: <span class="literal">False</span>, </span><br><span class="line">					<span class="string">"ratio"</span>: <span class="number">0.10</span></span><br><span class="line">						&#125;, </span><br><span class="line">			<span class="string">"stop_on_sell"</span>: <span class="literal">True</span>, </span><br><span class="line">			<span class="string">"trailing_stop"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: <span class="literal">True</span>, </span><br><span class="line">					<span class="string">"dec_ratio"</span>: <span class="number">0.05</span>,</span><br><span class="line">					<span class="string">"inc_ratio"</span>: <span class="number">0.07</span></span><br><span class="line">						&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+<p>각각의 파라미터들은 다음과 같은 속성을 갖습니다.</p>
+<p><strong>A.3.1. “EXCHANGE_NAME”: {“currency”: [], “interval”: [], “fiat”: FIAT}</strong><br>Bot에서 사용할 거래소의 명칭 EXCHANGE_NAME을 key로 하여, 해당 거래소에서 사용할 가상화폐(currency)의 종류, 분봉(interval)의 종류, 기축화폐(fiat)의 정보를 dictionary 타입으로 입력합니다. </p>
+<p><strong>A.3.1.1. “currency”: []</strong><br>EXCHANGE_NAME을 key값으로 하는 dictionary에서 가상화폐의 종류에 대한 정보는 “currency”를 key, 사용할 가상화폐의 종류가 저장된 list를 value값으로 합니다.<br>(예: “currency”: [“btc”, “xrp”, “eth”])</p>
+<p><strong>A.3.1.2. “interval”: []</strong><br>A.2.2와 마찬가지로 사용할 분봉에 대한 정보는 “interval”을 key, 사용할 분봉의 종류가 저장된 list를 value값으로 합니다.<br>(예: “interval”: [1, 5, 60])</p>
+<p><strong>A.3.1.3. “fiat”: FIAT</strong><br>거래소에서 사용하는 기축화폐의 정보의 경우 “fiat”를 key값으로 하고, string 타입의 FIAT를 value값으로 가집니다.<br>(예: “fiat”: “krw” 또는 “fiat”: “usd”)</p>
+<p><strong>A.3.2. “safety_setting”: {“profit_target”:{}, “stop_loss”:{}, “stop_on_sell”:bool, “trailing_stop”:{}}</strong><br>Bot에서 사용할 safety setting에 대한 정보 역시 “safety_setting”을 key값으로 하는 dictionary 타입으로 입력합니다. </p>
+<p><strong>A.3.2.1. “profit_target”: {“checked”: bool, “ratio”: RATIO}</strong><br>Bot에서 사용할 익절 조건(“profit_target”)으로, 초기 투입 금액의 입력한 RATIO 이상으로 수익이 발생했을 시에 자동으로 Bot을 중단시키는 조건입니다. </p>
+<p>이 기능을 사용할 것인지에 대한 여부를 “checked”를 key값, bool 타입의 value값으로 입력하고, 익절 조건의 비율을 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다.</p>
+<p><strong>A.3.2.2. “stop_loss”: {“checked”: bool, “ratio”: RATIO}</strong><br>Bot에서 사용할 손절 조건(“stop_loss”)으로, 초기 투입 금액의 입력한 RATIO 이하으로 손해가 발생했을 시에 자동으로 Bot을 중단시키는 조건입니다. </p>
+<p>이 기능을 사용할 것인지에 대한 여부를 “checked”를 key값, bool 타입의 value값으로 입력하고, 손절 조건의 비율을 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다.</p>
+<p><strong>A.3.2.3. “stop_on_sell”: bool</strong><br>safety setting의 조건을 만족하여 거래를 중단할 경우 보유하고 있던 가상화폐들을 청산할 것인지에 대한 여부를 “stop_on_sell”를 key값으로하여 bool 타입의 value를 입력합니다. </p>
+<p><strong>A.3.2.4. “trailing_stop”: {“checked”: bool, “dec_ratio”: RATIO, “inc_ratio”: RATIO}</strong><br>Bot을 가동중에 입력한 RATIO(“inc_ratio”) 이상 수익이 발생한 경우, 이후 거래에서 “dec_ratio” 이하로 하락했을 시 Bot 가동을 중단시키는 기능입니다. </p>
+<p>기능의 사용 여부를 “checked”를 key값, bool 타입의 value값으로 입력하고, 기능이 발동되는 기준인 상승 조건을 “inc_ratio”의 key값과 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다. 상승 이후 하락 조건을 “dec_ratio”의 key값과 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다. </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-botcontext-post/" rel="next" title="A.1 BotContext의 생성">
+                <i class="fa fa-chevron-left"></i> A.1 BotContext의 생성
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="https:/cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-run-strategy-post/" rel="prev" title="A.4 run_strategy 함수 작성 및 예시">
+                A.4 run_strategy 함수 작성 및 예시 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">bychkim</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="https:/cantapiya.github.io/catslab_blog/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">포스트</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">카테고리</span>
+                  
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">bychkim</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="https:/cantapiya.github.io/catslab_blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="https:/cantapiya.github.io/catslab_blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="https:/cantapiya.github.io/catslab_blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="https:/cantapiya.github.io/catslab_blog/js/utils.js?v=7.1.0"></script>
+
+  <script src="https:/cantapiya.github.io/catslab_blog/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="https:/cantapiya.github.io/catslab_blog/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="https:/cantapiya.github.io/catslab_blog/js/scrollspy.js?v=7.1.0"></script>
+<script src="https:/cantapiya.github.io/catslab_blog/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="https:/cantapiya.github.io/catslab_blog/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
