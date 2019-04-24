@@ -143,253 +143,6 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
-            </div>
-            <div class="date"><time datetime="2019-02-25T15:54:00.000Z" itemprop="datePublished">2019-02-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/">A.6 Order 객체 생성 및 사용 예시</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다.
-1class Order(currency, order_type, quantity, price, fiat):
-A.6.1. currency 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-07-set-order-post/" class="thumbnail">
-    
-    
-        <span style="background-image:url(!--￼2--)" alt="A.7 set_order 함수의 사용과 예시" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-07-set-order-post/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
-            </div>
-            <div class="date"><time datetime="2019-02-25T15:53:00.000Z" itemprop="datePublished">2019-02-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-07-set-order-post/">A.7 set_order 함수의 사용과 예시</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            A.7. set_order 함수의 사용과 사용과 예시Order 객체를 이용하여 생성한 주문들을 거래소 API를 이용하여 거래소에 전송을 하기 위한 함수입니다. 
-주문내역에 대한 정보를 저장하는 Order 객체와, 주문 시간을 지정하여 list에 추가한 뒤, 내부 함수를 이용하여 list 저장되어 있는 주문을 거래소로 전송을 합니다. 
-거래소로 전송함과 동시
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/" class="thumbnail">
-    
-    
-        <span style="background-image:url(!--￼0--)" alt="A.8 Order_list" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
-            </div>
-            <div class="date"><time datetime="2019-02-25T15:52:00.000Z" itemprop="datePublished">2019-02-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-08-order-list-post/">A.8 Order_list</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다. 
-order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-09-set-cancel-post/" class="thumbnail">
-    
-    
-        <span style="background-image:url(!--￼5--)" alt="A.9 set_cancel 함수의 사용과 사용 예시" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-09-set-cancel-post/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
-            </div>
-            <div class="date"><time datetime="2019-02-25T15:51:00.000Z" itemprop="datePublished">2019-02-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-09-set-cancel-post/">A.9 set_cancel 함수의 사용과 사용 예시</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            A.9. set_cancel 함수의 사용과 사용 예시거래소에 전송한 주문 중 미체결 주문들을 취소할 때 사용할 수 있는 함수입니다. 
-1def set_cancel(self, exchange, currency=None, order_id=None, qty=None):
-A.9.1 exchange (str)Bot에서 사용하는 거래소의 명칭을 입력합니다.
-A.9.2
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-10-others-post/" class="thumbnail">
-    
-    
-        <span style="background-image:url(!--￼0--)" alt="A.10. 부가적인 기능의 함수들과 사용 예시" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-10-others-post/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
-            </div>
-            <div class="date"><time datetime="2019-02-25T15:50:00.000Z" itemprop="datePublished">2019-02-26</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-10-others-post/">A.10. 부가적인 기능의 함수들과 사용 예시</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            A.10. 부가적인 기능의 함수들과 사용 예시거래소별 API를 사용하는 함수에 접근하고, 거래소별 자산, 주문 현황, 체결 현황과 같은 정보에 접근하기 위해서는 Bot을 생성할 때 입력한 거래소의 명칭을 key값으로 가지는 exchanges class에 접근하여 사용이 가능합니다. 
-전략을 구현하고, Bot을 가동하는 과정에서 실시간으로 사용자의 Bot에 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
         <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-trade-05-make-orders-post/" class="thumbnail">
     
     
@@ -413,7 +166,7 @@ A.9.2
             <div class="category">
             <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
             </div>
-            <div class="date"><time datetime="2019-02-25T02:55:00.000Z" itemprop="datePublished">2019-02-25</time></div>
+            <div class="date"><time datetime="2019-02-25T06:00:00.000Z" itemprop="datePublished">2019-02-25</time></div>
         </div>
         
     
@@ -426,6 +179,254 @@ A.9.2
             A.5. make_orders 함수의 작성 및 예시전략에서 사용하는 매수/매도 방식에 따라 매수주문/매도주문/주문취소를 진행합니다. 
 주문을 생성할 때는 Order 객체를 이용하여 생성하고, 생성한 주문들은 set_order 함수를 이용하여 주문 내역에 저장합니다. 
 주문 내역에 있는 주문들은 거래소 API를 이용하는 내부 함수를 사용하여 거래소로 전송됩니
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-00-base-post/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-00-base-post/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a>
+            </div>
+            <div class="date"><time datetime="2019-02-24T21:00:00.000Z" itemprop="datePublished">2019-02-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-00-base-post/">B.0 Backtest 기본</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            B.0. Backtest 기본B.0. COZA package 및 필요한 모듈 및 함수 import  
+
+필수 
+
+BacktestContext 생성을 위해 import 합니다.1from coza.backtest import BacktestContext
+backtest에서 가상으로 주문을 넣기 위한 Order 객체를 import 합니다.1from coza.ob
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/47657715/56639764-6536a980-66ac-11e9-9a3a-3d5c311beb0f.png)" alt="B.1 BacktestContext의 생성" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a>
+            </div>
+            <div class="date"><time datetime="2019-02-24T20:00:00.000Z" itemprop="datePublished">2019-02-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/">B.1 BacktestContext의 생성</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            B.1. BacktestContext의 생성BACKTEST_NAME을 지정하여 아래의 parameter를 입력하여 BacktestContext를 생성할 수 있습니다. 
+12345678BACKTEST_NAME = BacktestContext(user_uuid, 			initialize, 			run_strategy, 			make_orders, 			use_
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-02-run-post/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-02-run-post/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a>
+            </div>
+            <div class="date"><time datetime="2019-02-24T19:00:00.000Z" itemprop="datePublished">2019-02-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-02-run-post/">B.2 Backtest 실행</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            B.2. Backtest 실행생성한 BacktestContext를 run 함수를 이용하여 백테스트를 실행시킵니다.결과를 저장할 RESULT_NAME을 지정합니다.
+12345RESULT_NAME = BACKTEST_NAME.run(start_date, 			end_date, 			exchange, 			init_budget, 			slippage_rate)
+
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-03-07-initialize-run-strategy-make-orders-order-post/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-03-07-initialize-run-strategy-make-orders-order-post/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a>
+            </div>
+            <div class="date"><time datetime="2019-02-24T18:00:00.000Z" itemprop="datePublished">2019-02-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-03-07-initialize-run-strategy-make-orders-order-post/">B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            B.3. ~ B.6. initialize, run_strategy, make_orders, Order 작성B.3. initialize의 작성A. Trade의 initialize 함수와 동일합니다.
+B.4. run_strategy 작성기본적으로 A. Trade의 make_orders 함수와 동일하나 1분 주기로 dataframe을 업데이트하고 그에 따른 기술
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-08-result-post/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://user-images.githubusercontent.com/47657715/56639515-d3c73780-66ab-11e9-81db-85f57e5a383d.png)" alt="B.8 plot 함수의 사용 방법 및 사용 예시" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-08-result-post/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a>
+            </div>
+            <div class="date"><time datetime="2019-02-24T17:00:00.000Z" itemprop="datePublished">2019-02-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-08-result-post/">B.8 plot 함수의 사용 방법 및 사용 예시</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            B.8. plot 함수의 사용 방법 및 사용 예시Result 객체를 이용하여 사용할 수 있는 plot 함수는 백테스트에 이용한 가상화폐의 가격(종가 기준)의 변화와 백테스트 과정에서 거래가 발생한 시점마다 저장 되는 평가가격을 기반으로 자산의 변화를 도식화시켜주는 함수입니다. 이 함수의 사용 방법은 다음과 같습니다.
+1def plot(add_marker, 
         </p>
     </div>
 </article>
@@ -469,10 +470,10 @@ A.9.2
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-08-result-post/" class="thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-00-base-post/" class="thumbnail">
     
     
-        <span style="background-image:url(https://user-images.githubusercontent.com/47657715/56639515-d3c73780-66ab-11e9-81db-85f57e5a383d.png)" alt="B.8 plot 함수의 사용 방법 및 사용 예시" class="thumbnail-image"></span>
+        <span class="thumbnail-image thumbnail-none"></span>
     
     
 </a>
@@ -480,8 +481,68 @@ A.9.2
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-08-result-post/" class="title">B.8 plot 함수의 사용 방법 및 사용 예시</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-00-base-post/" class="title">A.0 Trade Basic</a></p>
+                            <p class="item-date"><time datetime="2019-02-26T00:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-01-botcontext-post/" class="thumbnail">
+    
+    
+        <span style="background-image:url(!--￼1--)" alt="A.1 BotContext의 생성" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-01-botcontext-post/" class="title">A.1 BotContext의 생성</a></p>
+                            <p class="item-date"><time datetime="2019-02-25T23:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-02-run-post/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-02-run-post/" class="title">A.2 Trade 실행</a></p>
+                            <p class="item-date"><time datetime="2019-02-25T22:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-03-initialize-post/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-03-initialize-post/" class="title">A.3 Initialze의 작성 및 사용 예시</a></p>
                             <p class="item-date"><time datetime="2019-02-25T21:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
                         </div>
                     </li>
@@ -489,7 +550,7 @@ A.9.2
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-03-07-initialize-run-strategy-make-orders-order-post/" class="thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-04-run-strategy-post/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -500,69 +561,9 @@ A.9.2
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-03-07-initialize-run-strategy-make-orders-order-post/" class="title">B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-04-run-strategy-post/" class="title">A.4 run_strategy 함수 작성 및 예시</a></p>
                             <p class="item-date"><time datetime="2019-02-25T20:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-02-run-post/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-02-run-post/" class="title">B.2 Backtest 실행</a></p>
-                            <p class="item-date"><time datetime="2019-02-25T19:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-01-context-post/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://user-images.githubusercontent.com/47657715/56639764-6536a980-66ac-11e9-9a3a-3d5c311beb0f.png)" alt="B.1 BacktestContext의 생성" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-01-context-post/" class="title">B.1 BacktestContext의 생성</a></p>
-                            <p class="item-date"><time datetime="2019-02-25T18:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-00-base-post/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-00-base-post/" class="title">B.0 Backtest 기본</a></p>
-                            <p class="item-date"><time datetime="2019-02-25T17:00:00.000Z" itemprop="datePublished">2019-02-26</time></p>
                         </div>
                     </li>
                 

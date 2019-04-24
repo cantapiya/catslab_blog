@@ -6,23 +6,25 @@
     
 
     
-    <title>A.6 Order 객체 생성 및 사용 예시 | CATSLAB BLOG</title>
+    <title>B.1 BacktestContext의 생성 | CATSLAB BLOG</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(currency, order_type, quantity, price, fiat): A.6.1. currency">
+    <meta name="description" content="B.1. BacktestContext의 생성BACKTEST_NAME을 지정하여 아래의 parameter를 입력하여 BacktestContext를 생성할 수 있습니다.  12345678BACKTEST_NAME = BacktestContext(user_uuid, 			initialize, 			run_strategy, 			make_orders, 			use_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A.6 Order 객체 생성 및 사용 예시">
-<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/index.html">
+<meta property="og:title" content="B.1 BacktestContext의 생성">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
-<meta property="og:description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(currency, order_type, quantity, price, fiat): A.6.1. currency">
+<meta property="og:description" content="B.1. BacktestContext의 생성BACKTEST_NAME을 지정하여 아래의 parameter를 입력하여 BacktestContext를 생성할 수 있습니다.  12345678BACKTEST_NAME = BacktestContext(user_uuid, 			initialize, 			run_strategy, 			make_orders, 			use_">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-24T08:04:03.199Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56639764-6536a980-66ac-11e9-9a3a-3d5c311beb0f.png">
+<meta property="og:updated_time" content="2019-04-24T08:02:45.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A.6 Order 객체 생성 및 사용 예시">
-<meta name="twitter:description" content="A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다. 1class Order(currency, order_type, quantity, price, fiat): A.6.1. currency">
+<meta name="twitter:title" content="B.1 BacktestContext의 생성">
+<meta name="twitter:description" content="B.1. BacktestContext의 생성BACKTEST_NAME을 지정하여 아래의 parameter를 입력하여 BacktestContext를 생성할 수 있습니다.  12345678BACKTEST_NAME = BacktestContext(user_uuid, 			initialize, 			run_strategy, 			make_orders, 			use_">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/47657715/56639764-6536a980-66ac-11e9-9a3a-3d5c311beb0f.png">
     
 
     
@@ -125,19 +127,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
+    <a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-2019-02-25-catslab-trade-06-order-post" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-2019-02-25-catslab-backtest-01-context-post" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        A.6 Order 객체 생성 및 사용 예시
+        B.1 BacktestContext의 생성
         </h1>
     
 
@@ -147,8 +149,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/" class="article-date">
-            <time datetime="2019-02-25T18:00:00.000Z" itemprop="datePublished">2019-02-26</time>
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/" class="article-date">
+            <time datetime="2019-02-24T20:00:00.000Z" itemprop="datePublished">2019-02-25</time>
         </a>
     </div>
 
@@ -159,17 +161,18 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="A-6-Order-객체-생성-및-사용-예시"><a href="#A-6-Order-객체-생성-및-사용-예시" class="headerlink" title="A.6. Order 객체 생성 및 사용 예시"></a>A.6. Order 객체 생성 및 사용 예시</h2><p>거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span><span class="params">(currency, order_type, quantity, price, fiat)</span>:</span></span><br></pre></td></tr></table></figure>
-<p><strong>A.6.1. currency (str)</strong><br>거래소에 주문을 넣을 가상 화폐의 명칭을 입력합니다.<br>(예: “btc”, “eth”, “xrp”, … )</p>
-<p><strong>A.6.2. order_type (str)</strong><br>매수와 매도를 구분하기 위한 parameter입니다.<br>매수 주문의 경우 “BUY”, 매도 주문의 경우 “SELL” 타입으로 입력합니다.</p>
-<p><strong>A.6.3. quantity (float)</strong><br>주문할 가상화폐의 수량을 입력합니다.</p>
-<p><strong>A.6.4. price (int)</strong><br>주문할 가상화폐의 가격을 입력합니다.</p>
-<p><strong>A.6.5. fiat (str)</strong><br>거래소에서 사용하는 기축화폐를 입력합니다.<br>(예: “krw”, “usd”, … )</p>
-<p>Order 객체의 사용 예시는 다음과 같습니다.</p>
-<p>매수주문 (현재 가격으로 주문): </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">price = data[f’&#123;currency]_&#123;int(interval)&#125;’][‘close’].loc[data[f’&#123;currency]_&#123;int(interval)&#125;’].index[<span class="number">-1</span>]]</span><br><span class="line">buy_order = Order(currency=’xrp’, order_type=’BUY’, fiat=’krw’, price=price, quantity=<span class="number">1.2345</span>)</span><br></pre></td></tr></table></figure>
-<p>매도주문 (지정가 주문):<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br><span class="line"></span><br><span class="line">sell_order = Order(currency=’xrp’, order_type=’SELL’, fiat=’krw’, price=<span class="number">342</span>, quantity=<span class="number">5.4321</span>)</span><br></pre></td></tr></table></figure></p>
+            <h2 id="B-1-BacktestContext의-생성"><a href="#B-1-BacktestContext의-생성" class="headerlink" title="B.1. BacktestContext의 생성"></a>B.1. BacktestContext의 생성</h2><p>BACKTEST_NAME을 지정하여 아래의 parameter를 입력하여 BacktestContext를 생성할 수 있습니다. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BACKTEST_NAME = BacktestContext(user_uuid, </span><br><span class="line">			initialize, </span><br><span class="line">			run_strategy, </span><br><span class="line">			make_orders, </span><br><span class="line">			use_data, </span><br><span class="line">			data_path, </span><br><span class="line">			save_result, </span><br><span class="line">			return_result)</span><br></pre></td></tr></table></figure>
+<p><strong>B.1.1. user_uuid</strong><br>Cats Lab에서 발급 받은 사용자의 user_uuid를 입력합니다.</p>
+<p><strong>B.1.2. initialize</strong><br>A. Trade의 initialize 함수와 동일합니다.</p>
+<p><strong>B.1.3. run_strategy</strong><br>A. Trade의 run_strategy 함수와 동일합니다.</p>
+<p><strong>B.1.4. make_orders</strong><br>A. Trade의 make_orders 함수와 동일합니다.</p>
+<p><strong>B.1.5. use_data (str, ‘LIVE’ 또는 ‘LOCAL’)</strong><br>use_data = “LIVE”로 입력할 경우 거래소 API를 이용하여 입력한 기간만큼의 캔들 데이터를 실시간으로 호출하여 사용합니다.</p>
+<p>use_data = “LOCAL”로 입력할 경우 지정한 경로(B.1.6. data_path)의 입력한 가상화폐와 분봉에 해당하는 CSV 파일을 로드하여 사용합니다.</p>
+<p><img width="555" alt="local candle data 파일의 format" src="https://user-images.githubusercontent.com/47657715/56639764-6536a980-66ac-11e9-9a3a-3d5c311beb0f.png"></p>
+<p><strong>B.1.6. data_path (str)</strong><br>B.1.5. use_data에서 ‘LOCAL’ 모드로 입력하여 사용하는 경우, 캔들 데이터로 사용할 CSV 파일들의 경로를 입력합니다.</p>
+<p><strong>B.1.7. return_result (bool)</strong><br>백테스트의 결과를 반환할 것인지에 대한 여부를 bool 타입으로 입력합니다. </p>
+<p>로컬에서 백테스트를 실행할 경우 백테스트 결과를 확인하기 위해 True로 입력하여 반환 받은 result 객체로 접근이 가능합니다.</p>
 
         </div>
         <footer class="article-footer">
@@ -177,7 +180,7 @@
 
 
 
-    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/" data-id="cjuuxjyea000g779wxy0adnkz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/" data-id="cjuuxjydn0001779w9k8sbizm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -247,18 +250,17 @@
             "@type": "Person",
             "name": "bychkim"
         },
-        "headline": "A.6 Order 객체 생성 및 사용 예시",
-        "image": "https://cantapiya.github.io/catslab_blog",
+        "headline": "B.1 BacktestContext의 생성",
+        "image": "https://cantapiya.github.io/catslab_bloghttps://user-images.githubusercontent.com/47657715/56639764-6536a980-66ac-11e9-9a3a-3d5c311beb0f.png",
         "keywords": "",
-        "genre": "CATS LAB Trade",
-        "datePublished": "2019-02-26",
-        "dateCreated": "2019-02-26",
+        "genre": "CATS LAB Backtest",
+        "datePublished": "2019-02-25",
+        "dateCreated": "2019-02-25",
         "dateModified": "2019-04-24",
-        "url": "https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/",
-        "description": "A.6. Order 객체 생성 및 사용 예시거래소에 주문을 전송하기 전에 Order 객체를 생성하여 list에 저장을 한 뒤, 거래소 API를 이용하는 함수를 사용하여 list에 저장되어 있는 주문들을 한 번에 처리합니다.
-1class Order(currency, order_type, quantity, price, fiat):
-A.6.1. currency "
-        "wordCount": 162
+        "url": "https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/",
+        "description": "B.1. BacktestContext의 생성BACKTEST_NAME을 지정하여 아래의 parameter를 입력하여 BacktestContext를 생성할 수 있습니다. 
+12345678BACKTEST_NAME = BacktestContext(user_uuid, 			initialize, 			run_strategy, 			make_orders, 			use_"
+        "wordCount": 151
     }
 </script>
 
@@ -290,20 +292,20 @@ A.6.1. currency "
         
 <nav id="article-nav">
     
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-04-run-strategy-post/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-00-base-post/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            A.4 run_strategy 함수 작성 및 예시
+            B.0 Backtest 기본
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-trade-07-set-order-post/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-02-run-post/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">A.7 set_order 함수의 사용과 예시</p>
+        <p class="article-nav-title">B.2 Backtest 실행</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -484,7 +486,7 @@ A.6.1. currency "
     var disqus_shortname = 'hexo-theme-aabbcc';
     
     
-    var disqus_url = 'https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-trade-06-order-post/';
+    var disqus_url = 'https://cantapiya.github.io/catslab_blog/2019/02/25/2019-02-25-catslab-backtest-01-context-post/';
     
     (function() {
     var dsq = document.createElement('script');
