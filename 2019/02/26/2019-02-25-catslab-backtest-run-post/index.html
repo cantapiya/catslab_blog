@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-run-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
 <meta property="og:description" content="B.2. Backtest 실행생성한 BacktestContext를 run 함수를 이용하여 백테스트를 실행시킵니다.결과를 저장할 RESULT_NAME을 지정합니다. 12345RESULT_NAME = BACKTEST_NAME.run(start_date, 			end_date, 			exchange, 			init_budget, 			slippage_rate)">
-<meta property="og:locale" content="ko">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-02-25T10:31:04.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="B.2 Backtest 실행">
@@ -71,7 +71,7 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/catslab_blog/">홈</a>
+                                    <a class="main-nav-list-link" href="/catslab_blog/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-backtest/">catslab backtest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-backtest-Result/">catslab backtest Result</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-backtest-backtestcontext/">catslab backtest backtestcontext</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-backtest-initialize-run-strategy-make-orders-Order/">catslab backtest initialize, run_strategy, make_orders, Order</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-backtest-runbacktest/">catslab backtest runbacktest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-trade/">catslab trade</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-trade-botcontext/">catslab trade botcontext</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/catslab-trade-others/">catslab trade others</a></li></ul>
@@ -85,7 +85,7 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="검색">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -104,10 +104,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '포스트',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: '카테고리',
-            TAGS: '태그',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/catslab_blog/',
@@ -182,7 +182,7 @@
 
 
 
-    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-run-post/" data-id="cjuunc9k10005ek9wmqz02u63" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-run-post/" data-id="cjuunhqf60005nk9wnr86gjaf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -286,7 +286,7 @@
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>팔로우:</p>
+        <p>follow:</p>
         <ul class="social-links">
             
         </ul>
@@ -295,20 +295,20 @@
         
 <nav id="article-nav">
     
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
+        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-result-post/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성
+            B.8 plot 함수의 사용 방법 및 사용 예시
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-base-post/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">B.0 Backtest 기본</p>
+        <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">B.1 BacktestContext의 생성</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -323,7 +323,7 @@
             
                 
     <div class="widget-wrap">
-        <h3 class="widget-title">최근 글</h3>
+        <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class>
                 
@@ -350,10 +350,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" class="thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" class="thumbnail">
     
     
-        <span style="background-image:url(!--￼1--)" alt="B.1 BacktestContext의 생성" class="thumbnail-image"></span>
+        <span class="thumbnail-image thumbnail-none"></span>
     
     
 </a>
@@ -361,8 +361,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/catslab-backtest-backtestcontext/">catslab backtest backtestcontext</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" class="title">B.1 BacktestContext의 생성</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/catslab-backtest-initialize-run-strategy-make-orders-Order/">catslab backtest initialize, run_strategy, make_orders, Order</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" class="title">B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성</a></p>
                             <p class="item-date"><time datetime="2019-02-25T21:08:34.000Z" itemprop="datePublished">2019-02-26</time></p>
                         </div>
                     </li>
@@ -390,26 +390,6 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/catslab-backtest-initialize-run-strategy-make-orders-Order/">catslab backtest initialize, run_strategy, make_orders, Order</a></p>
-                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-initialize-run-strategy-make-orders-order-post/" class="title">B.3 ~ B.6 initialize, run_strategy, make_orders, Order 작성</a></p>
-                            <p class="item-date"><time datetime="2019-02-25T21:08:34.000Z" itemprop="datePublished">2019-02-26</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-run-post/" class="thumbnail">
     
     
@@ -427,6 +407,26 @@
                         </div>
                     </li>
                 
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" class="thumbnail">
+    
+    
+        <span style="background-image:url(!--￼1--)" alt="B.1 BacktestContext의 생성" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/catslab_blog/categories/catslab-backtest-backtestcontext/">catslab backtest backtestcontext</a></p>
+                            <p class="item-title"><a href="/catslab_blog/2019/02/26/2019-02-25-catslab-backtest-context-post/" class="title">B.1 BacktestContext의 생성</a></p>
+                            <p class="item-date"><time datetime="2019-02-25T21:08:34.000Z" itemprop="datePublished">2019-02-26</time></p>
+                        </div>
+                    </li>
+                
             </ul>
         </div>
     </div>
@@ -434,7 +434,7 @@
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">카테고리</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-backtest/">catslab backtest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-backtest-Result/">catslab backtest Result</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-backtest-backtestcontext/">catslab backtest backtestcontext</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-backtest-initialize-run-strategy-make-orders-Order/">catslab backtest initialize, run_strategy, make_orders, Order</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-backtest-runbacktest/">catslab backtest runbacktest</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-trade/">catslab trade</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-trade-botcontext/">catslab trade botcontext</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/catslab-trade-others/">catslab trade others</a><span class="category-list-count">2</span></li></ul>
         </div>
@@ -444,9 +444,9 @@
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">아카이브</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/04/">4월 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/02/">2월 2019</a><span class="archive-list-count">16</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/04/">April 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/02/">February 2019</a><span class="archive-list-count">16</span></li></ul>
         </div>
     </div>
 
@@ -460,7 +460,7 @@
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">링크</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
