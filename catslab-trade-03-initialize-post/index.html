@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>A.3 Initialze의 작성 및 사용 예시 | CATSLAB BLOG</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &amp;#123;&quot;EXCHANGE_NAME_1&quot;: &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A.3 Initialze의 작성 및 사용 예시">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/catslab-trade-03-initialize-post/index.html">
+<meta property="og:site_name" content="CATSLAB BLOG">
+<meta property="og:description" content="A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &amp;#123;&quot;EXCHANGE_NAME_1&quot;: &amp;#123;">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/catslab-trade-03-initialize-post/image/catslab.png">
+<meta property="og:updated_time" content="2019-04-24T09:09:49.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A.3 Initialze의 작성 및 사용 예시">
+<meta name="twitter:description" content="A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &amp;#123;&quot;EXCHANGE_NAME_1&quot;: &amp;#123;">
+<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/catslab-trade-03-initialize-post/image/catslab.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/catslab_blog/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/catslab_blog/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/catslab_blog/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/catslab_blog/css/style.css">
+
+    <script src="/catslab_blog/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/catslab_blog/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/catslab_blog/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/catslab_blog/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/catslab_blog/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Installation/">Installation</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/k8s-Cluster-on-AWS-with-Kops/">k8s Cluster on AWS with Kops</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/catslab_blog/',
+        CONTENT_URL: '/catslab_blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/catslab_blog/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-catslab-trade-03-initialize-post" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        A.3 Initialze의 작성 및 사용 예시
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/catslab_blog/catslab-trade-03-initialize-post/" class="article-date">
+            <time datetime="2019-02-25T21:00:00.000Z" itemprop="datePublished">2019-02-26</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><strong>A.3. initialize 함수의 작성 및 사용 예시</strong><br>Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(self)</span>:</span></span><br><span class="line">	self.context[‘trade_info’] = &#123;<span class="string">"EXCHANGE_NAME_1"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [], </span><br><span class="line">					<span class="string">"interval"</span>: [],</span><br><span class="line">					<span class="string">"fiat"</span>: FIAT</span><br><span class="line">					&#125;,</span><br><span class="line">				<span class="string">"EXCHANGE_NAME_2"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [],</span><br><span class="line">					<span class="string">"interval"</span>: [],</span><br><span class="line">					<span class="string">"fiat"</span>: FIAT</span><br><span class="line">					&#125;,</span><br><span class="line">			… , </span><br><span class="line">			</span><br><span class="line">				<span class="string">"safety_setting"</span>: &#123;</span><br><span class="line">					<span class="string">"profit_target"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: bool,</span><br><span class="line">					<span class="string">"ratio"</span>: RATIO</span><br><span class="line">					&#125;,</span><br><span class="line">				<span class="string">"stop_loss"</span>:&#123;</span><br><span class="line">					<span class="string">"checked"</span>: bool,</span><br><span class="line">					<span class="string">"ratio"</span>: RATIO</span><br><span class="line">					&#125;,</span><br><span class="line">				<span class="string">"stop_on_sell"</span>: bool,</span><br><span class="line">				<span class="string">"trailing_stop"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: bool,</span><br><span class="line">					<span class="string">"dec_ratio"</span>: RATIO,</span><br><span class="line">					<span class="string">"inc_ratio"</span>: RATIO</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure></p>
+<p>실제로 작성한 예제는 다음과 같습니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">initialize</span><span class="params">(self)</span>:</span></span><br><span class="line">self.context[<span class="string">'trade_info'</span>] = &#123;<span class="string">"coinone"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [<span class="string">"xrp"</span>],</span><br><span class="line">					<span class="string">"interval"</span>: [<span class="number">1</span>],</span><br><span class="line">					<span class="string">"fiat"</span>: <span class="string">"krw"</span></span><br><span class="line">					&#125;,</span><br><span class="line">			      <span class="string">"upbit"</span>: &#123;</span><br><span class="line">					<span class="string">"currency"</span>: [<span class="string">"xrp"</span>],</span><br><span class="line">					<span class="string">"interval"</span>: [<span class="number">1</span>],</span><br><span class="line">					<span class="string">"fiat"</span>: <span class="string">"krw"</span></span><br><span class="line">					&#125;, </span><br><span class="line">			<span class="string">"safety_setting"</span>: &#123;</span><br><span class="line">					<span class="string">"profit_target"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: <span class="literal">True</span>, </span><br><span class="line">					<span class="string">"ratio"</span>: <span class="number">0.10</span>,</span><br><span class="line">						&#125;, </span><br><span class="line">			<span class="string">"stop_loss"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: <span class="literal">False</span>, </span><br><span class="line">					<span class="string">"ratio"</span>: <span class="number">0.10</span></span><br><span class="line">						&#125;, </span><br><span class="line">			<span class="string">"stop_on_sell"</span>: <span class="literal">True</span>, </span><br><span class="line">			<span class="string">"trailing_stop"</span>: &#123;</span><br><span class="line">					<span class="string">"checked"</span>: <span class="literal">True</span>, </span><br><span class="line">					<span class="string">"dec_ratio"</span>: <span class="number">0.05</span>,</span><br><span class="line">					<span class="string">"inc_ratio"</span>: <span class="number">0.07</span></span><br><span class="line">						&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br></pre></td></tr></table></figure>
+<p>각각의 파라미터들은 다음과 같은 속성을 갖습니다.</p>
+<p><strong>A.3.1. “EXCHANGE_NAME”: {“currency”: [], “interval”: [], “fiat”: FIAT}</strong><br>Bot에서 사용할 거래소의 명칭 EXCHANGE_NAME을 key로 하여, 해당 거래소에서 사용할 가상화폐(currency)의 종류, 분봉(interval)의 종류, 기축화폐(fiat)의 정보를 dictionary 타입으로 입력합니다. </p>
+<p><strong>A.3.1.1. “currency”: []</strong><br>EXCHANGE_NAME을 key값으로 하는 dictionary에서 가상화폐의 종류에 대한 정보는 “currency”를 key, 사용할 가상화폐의 종류가 저장된 list를 value값으로 합니다.<br>(예: “currency”: [“btc”, “xrp”, “eth”])</p>
+<p><strong>A.3.1.2. “interval”: []</strong><br>A.2.2와 마찬가지로 사용할 분봉에 대한 정보는 “interval”을 key, 사용할 분봉의 종류가 저장된 list를 value값으로 합니다.<br>(예: “interval”: [1, 5, 60])</p>
+<p><strong>A.3.1.3. “fiat”: FIAT</strong><br>거래소에서 사용하는 기축화폐의 정보의 경우 “fiat”를 key값으로 하고, string 타입의 FIAT를 value값으로 가집니다.<br>(예: “fiat”: “krw” 또는 “fiat”: “usd”)</p>
+<p><strong>A.3.2. “safety_setting”: {“profit_target”:{}, “stop_loss”:{}, “stop_on_sell”:bool, “trailing_stop”:{}}</strong><br>Bot에서 사용할 safety setting에 대한 정보 역시 “safety_setting”을 key값으로 하는 dictionary 타입으로 입력합니다. </p>
+<p><strong>A.3.2.1. “profit_target”: {“checked”: bool, “ratio”: RATIO}</strong><br>Bot에서 사용할 익절 조건(“profit_target”)으로, 초기 투입 금액의 입력한 RATIO 이상으로 수익이 발생했을 시에 자동으로 Bot을 중단시키는 조건입니다. </p>
+<p>이 기능을 사용할 것인지에 대한 여부를 “checked”를 key값, bool 타입의 value값으로 입력하고, 익절 조건의 비율을 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다.</p>
+<p><strong>A.3.2.2. “stop_loss”: {“checked”: bool, “ratio”: RATIO}</strong><br>Bot에서 사용할 손절 조건(“stop_loss”)으로, 초기 투입 금액의 입력한 RATIO 이하으로 손해가 발생했을 시에 자동으로 Bot을 중단시키는 조건입니다. </p>
+<p>이 기능을 사용할 것인지에 대한 여부를 “checked”를 key값, bool 타입의 value값으로 입력하고, 손절 조건의 비율을 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다.</p>
+<p><strong>A.3.2.3. “stop_on_sell”: bool</strong><br>safety setting의 조건을 만족하여 거래를 중단할 경우 보유하고 있던 가상화폐들을 청산할 것인지에 대한 여부를 “stop_on_sell”를 key값으로하여 bool 타입의 value를 입력합니다. </p>
+<p><strong>A.3.2.4. “trailing_stop”: {“checked”: bool, “dec_ratio”: RATIO, “inc_ratio”: RATIO}</strong><br>Bot을 가동중에 입력한 RATIO(“inc_ratio”) 이상 수익이 발생한 경우, 이후 거래에서 “dec_ratio” 이하로 하락했을 시 Bot 가동을 중단시키는 기능입니다. </p>
+<p>기능의 사용 여부를 “checked”를 key값, bool 타입의 value값으로 입력하고, 기능이 발동되는 기준인 상승 조건을 “inc_ratio”의 key값과 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다. 상승 이후 하락 조건을 “dec_ratio”의 key값과 float 타입의 RATIO (0&lt;=RATIO&lt;=1)로 입력합니다. </p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://cantapiya.github.io/catslab_blog/catslab-trade-03-initialize-post/" data-id="cjuwczu73000gra9ws1c652ca" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "bychkim"
+        },
+        "headline": "A.3 Initialze의 작성 및 사용 예시",
+        "image": "https://cantapiya.github.io/catslab_blogimage/catslab.png",
+        "keywords": "",
+        "genre": "CATS LAB Trade",
+        "datePublished": "2019-02-26",
+        "dateCreated": "2019-02-26",
+        "dateModified": "2019-04-24",
+        "url": "https://cantapiya.github.io/catslab_blog/catslab-trade-03-initialize-post/",
+        "description": "A.3. initialize 함수의 작성 및 사용 예시Initialize 함수의 작성 형식은 다음과 같은 형식을 갖으며,123456789101112131415161718192021222324252627282930def initialize(self):	self.context[‘trade_info’] = &#123;"EXCHANGE_NAME_1": &#123;"
+        "wordCount": 537
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/catslab_blog/catslab-trade-02-run-post/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            A.2 Trade 실행
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/catslab_blog/catslab-trade-04-run-strategy-post/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">A.4 run_strategy 함수 작성 및 예시</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Installation/">Installation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/k8s-Cluster-on-AWS-with-Kops/">k8s Cluster on AWS with Kops</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/04/">April 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/02/">February 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/catslab_blog/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 bychkim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://cantapiya.github.io/catslab_blog/catslab-trade-03-initialize-post/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/catslab_blog/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/catslab_blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/catslab_blog/js/main.js"></script>
+
+    </div>
+</body>
+</html>
