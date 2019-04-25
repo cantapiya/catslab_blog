@@ -6,17 +6,25 @@
     
 
     
-    <title>Category: AWS Settings &amp; Installation | CATSLAB BLOG</title>
+    <title>A.8 Order_list | CATSLAB BLOG</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="CATSLAB BLOG">
-<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/index.html">
+        <meta name="keywords" content>
+    
+    <meta name="description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A.8 Order_list">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
+<meta property="og:description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/image/catslab.png">
+<meta property="og:updated_time" content="2019-04-24T09:15:26.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CATSLAB BLOG">
+<meta name="twitter:title" content="A.8 Order_list">
+<meta name="twitter:description" content="A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다.  order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord">
+<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/image/catslab.png">
     
 
     
@@ -119,80 +127,156 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">AWS Settings & Installation</em>
+    <a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-2019-02-25-catslab-trade-08-order-list-post" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/catslab_blog/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/catslab_blog/2019-04-25-k8s-AWS-settings/" class="thumbnail">
-    
-    
-        <span style="background-image:url(image/catslab.png)" alt="AWS Settings and Installation" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a>
-            </div>
-            <div class="date"><time datetime="2019-04-26T22:00:00.000Z" itemprop="datePublished">2019-04-27</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/catslab_blog/2019-04-25-k8s-AWS-settings/">AWS Settings and Installation</a>
+        A.8 Order_list
         </h1>
     
 
-        <p class="article-excerpt">
-            AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.
-
-“AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.
-
-
-단계 1: Amazon Machine Image(AMI) 선택
-“Ubuntu Server 18.04 LTS (HVM), SS
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/" class="article-date">
+            <time datetime="2019-02-25T16:00:00.000Z" itemprop="datePublished">2019-02-26</time>
+        </a>
     </div>
-</article>
-    
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="A-8-order-list"><a href="#A-8-order-list" class="headerlink" title="A.8. order_list"></a>A.8. order_list</h2><p>Order 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다. </p>
+<p>order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Order 객체를 value값으로 하는 dictionary로 형태로 관리됩니다. </p>
+<p>주문한 수량의 전체가 체결이 되거나, 전체가 취소될 경우 order_list에서 제거가 되며, 자산의 업데이트가 진행됩니다. 부분 체결 및 부분 취소가 발생한 경우에도 자산의 업데이트가 진행되며, 미체결 수량이 존재하는 경우에는 remain_qty에 그 수량을 저장합니다. </p>
+<p>order_list에 대한 예시는 다음과 같습니다. coinone_bot이라는 BotContext에 저장되어 있는 order_list로, ‘iota’와 ‘xrp’에 관련된 미체결 주문 정보가 저장되어 있는 것을 볼 수 있습니다. </p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56647672-ce261d80-66bc-11e9-913a-a99fe66470b1.png" alt="A.8 order_list Example1"></p>
+<p>Order 객체에 저장된 주문 정보들은 다음과 같습니다.</p>
+<p><strong>A.8.1. currency</strong><br>주문한 가상화폐의 명칭을 저장합니다.</p>
+<p><strong>A.8.2. fee</strong><br>주문한 수량을 기준으로 계산한 수수료에 대한 정보입니다. ‘order_type’이 ‘SELL’인 경우 ‘fee’에 저장된 값은 Bot에서 사용하는 거래소의 기축화폐에 해당합니다. </p>
+<p><strong>A.8.3. fiat</strong><br>Bot에서 사용하는 거래소의 기축화폐의 정보입니다.</p>
+<p><strong>A.8.4. order_type</strong><br>매수 주문인지 매도 주문인지 구분하는 역할을 합니다.</p>
+<p><strong>A.8.5. price</strong><br>주문 가격에 대한 정보입니다.</p>
+<p><strong>A.8.6. quantity</strong><br>주문한 수량에 대한 정보입니다.</p>
+<p><strong>A.8.7. remain_qty</strong><br>주문한 수량에서 부분 체결이나 부분 취소가 발생하고 난 뒤의 미체결 된 주문 수량에 대한 정보입니다.</p>
+<p><strong>A.8.8. timestamp</strong><br>주문한 시간의 timestamp값에 대한 정보입니다.</p>
+
         </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/" data-id="cjuw0x5wb000ldy9w74ojei6i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "bychkim"
+        },
+        "headline": "A.8 Order_list",
+        "image": "https://cantapiya.github.io/catslab_blogimage/catslab.png",
+        "keywords": "",
+        "genre": "CATS LAB Trade",
+        "datePublished": "2019-02-26",
+        "dateCreated": "2019-02-26",
+        "dateModified": "2019-04-24",
+        "url": "https://cantapiya.github.io/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/",
+        "description": "A.8. order_listOrder 객체를 이용하여 생성된 주문은 내부 함수를 거쳐 거래소로 전송된 뒤에 BotContext의 exchanges 내부 order_list에 저장됩니다. 
+order_list는 가상화폐 종류를 key값으로 한 dictionary 내부에 다시 order_id를 key값으로하고 해당 order_id의 주문 정보를 포함하는 Ord"
+        "wordCount": 172
+    }
+</script>
+
+</article>
+
+    <section id="comments">
     
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-
-    </div></section>
-
+    
+    </section>
 
 
 
@@ -206,6 +290,29 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/catslab_blog/2019-02-25-catslab-trade-07-set-order-post/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            A.7 set_order 함수의 사용과 예시
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/catslab_blog/2019-02-25-catslab-trade-09-set-cancel-post/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">A.9 set_cancel 함수의 사용과 사용 예시</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -381,11 +488,13 @@
     var disqus_shortname = 'hexo-theme-aabbcc';
     
     
+    var disqus_url = 'https://cantapiya.github.io/catslab_blog/2019-02-25-catslab-trade-08-order-list-post/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
