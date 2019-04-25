@@ -20,7 +20,7 @@
 <meta property="og:description" content="AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.  “AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.   단계 1: Amazon Machine Image(AMI) 선택    “Ubuntu Server 18.04 LTS (HVM),">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019/04/27/2019-04-25-k8s-AWS-settings-00/image/catslab.png">
-<meta property="og:updated_time" content="2019-04-25T01:21:07.504Z">
+<meta property="og:updated_time" content="2019-04-25T01:53:16.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS Settings and Installation">
 <meta name="twitter:description" content="AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.  “AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.   단계 1: Amazon Machine Image(AMI) 선택    “Ubuntu Server 18.04 LTS (HVM),">
@@ -205,8 +205,54 @@
 <ul>
 <li>다음 명령어를 통해 생성한 인스턴스로 접속할 수 있습니다.</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo ssh -i [KEY_PAIR_NAME].pem ubuntu@[IPv4 퍼블릭 IP]</span><br></pre></td></tr></table></figure>
+<p><code>~$ sudo ssh -i [KEY_PAIR_NAME].pem ubuntu@[IPv4 퍼블릭 IP]</code></p>
 <p><img src="https://user-images.githubusercontent.com/47657715/56703430-b5147f80-6743-11e9-877e-2b769593d779.png" alt="인스턴스 접속"></p>
+<h2 id="kops-설치-및-kubectl-설치"><a href="#kops-설치-및-kubectl-설치" class="headerlink" title="kops 설치 및 kubectl 설치"></a>kops 설치 및 kubectl 설치</h2><p><strong>kops 설치</strong>  </p>
+<p>kops는 Kubernetes 클러스터를 만들어 주는 CLI 도구이며, 실행 파일 하나만 다운 받으면 됩니다.</p>
+<p><code>~$ wget -O kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d &#39;&quot;&#39; -f 4)/kops-linux-amd64
+~$ chmod +x ./kops
+~$ sudo mv ./kops /usr/local/bin/</code></p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56703639-cc07a180-6744-11e9-91d8-3d8377ca6a66.png" alt="kops 설치"></p>
+<p><strong>kubectl 설치</strong>  </p>
+<p>kubectl은 이미 만들어져 있는 Kubernetes 클러스터를 관리하기 위한 도구이며, 다음을 실행하여 실행 파일 하나만 다운 받으면 됩니다. </p>
+<p><code>~$ wget -O kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+~$ chmod +x ./kubectl
+~$ sudo mv ./kubectl /usr/local/bin/kubectl</code></p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56703670-eccff700-6744-11e9-9edb-52eb8ad429ff.png" alt="kubectl 설치"></p>
+<h2 id="IAM-유저-생성"><a href="#IAM-유저-생성" class="headerlink" title="IAM 유저 생성"></a>IAM 유저 생성</h2><p>kops가 동작하기 위해서는 AWS 권한이 필요하고 따라서 적당한 권한을 가지고 있는 IAM 유저를 생성해야 합니다.</p>
+<ul>
+<li>AWS 웹 콘솔에서 서비스 페이지를 열고 “보안, 자격 증명 및 규정 준수” 탭에서 “IAM”을 선택하여 IAM 유저 생성을 진행합니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/47657715/56703795-6cf65c80-6745-11e9-85a6-f0d0d699fe68.png" alt="IAM 유저 생성 01"></p>
+<ul>
+<li>“사용자” 탭에서 “사용자 추가”를 진행합니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/47657715/56703833-a7f89000-6745-11e9-8026-f1784b026778.png" alt="IAM 유저 생성 02"></p>
+<ul>
+<li>kops라는 사용자 이름을 추가하고 그룹에 사용자 추가를 진행하여 다음 권한을 가지고 있는 kops라는 그룹을 생성합니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704144-fce8d600-6746-11e9-8f0a-98662c01f6be.png" alt="IAM 유저 생성 03"></p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704158-0c681f00-6747-11e9-8b12-76aea3b616df.png" alt="IAM 유저 생성 04"></p>
+<p>검색창에 다음 정책들을 검색하여 권한을 설정합니다.</p>
+<hr>
+<p>AmazonEC2FullAccess<br>AmazonRoute53FullAccess<br>AmazonS3FullAccess<br>IAMFullAccess<br>AmazonVPCFullAccess</p>
+<hr>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704208-3cafbd80-6747-11e9-9f52-1c91591c9734.png" alt="IAM 유저 생성 05"></p>
+<ul>
+<li>kops 그룹에 속한 kops라는 유저를 만들고 Access key ID와 Secret access key를 저장해 둡니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704242-5a7d2280-6747-11e9-9c08-a18f0d3f7bc8.png" alt="IAM 유저 생성 06"></p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704292-85677680-6747-11e9-8f89-3f189cb746fd.png" alt="IAM 유저 생성 07"></p>
+<ul>
+<li>사용자 만들기를 진행하여 액세스 키 ID와 비밀 액세스 키를 확인 후 저장해 둡니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704330-ab8d1680-6747-11e9-9880-a34c59cf5297.png" alt="IAM 유저 생성 08"></p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704438-10e10780-6748-11e9-853a-0f54ea699a33.png" alt="IAM 유저 생성 09"></p>
+<ul>
+<li>다음과 같이 kops 그룹에 kops 사용자가 추가되어 있는 것을 확인할 수 있습니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704462-29512200-6748-11e9-9ea9-1e83d9ce0787.png" alt="IAM 유저 생성 10"></p>
+<p><img src="https://user-images.githubusercontent.com/47657715/56704465-2d7d3f80-6748-11e9-8ed0-04580845fd95.png" alt="IAM 유저 생성 11"></p>
 
         </div>
         <footer class="article-footer">
@@ -214,7 +260,7 @@
 
 
 
-    <a data-url="https://cantapiya.github.io/catslab_blog/2019/04/27/2019-04-25-k8s-AWS-settings-00/" data-id="cjuv5pvw8000vtu9wy5fkaztd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019/04/27/2019-04-25-k8s-AWS-settings-00/" data-id="cjuvyop9n000qdd9waf0i5bsk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -300,7 +346,7 @@
 단계 1: Amazon Machine Image(AMI) 선택  
 
 “Ubuntu Server 18.04 LTS (HVM),"
-        "wordCount": 219
+        "wordCount": 455
     }
 </script>
 
