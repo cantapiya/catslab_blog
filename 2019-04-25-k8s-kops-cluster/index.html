@@ -12,18 +12,18 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="Kops 이용하여 Cluster 생성하기   https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/     를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다. S3 버킷 생성클러스터를 생성하기 위해 S">
+    <meta name="description" content="Kops 이용하여 Cluster 생성하기AWS Settings and Installation를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다. S3 버킷 생성클러스터를 생성하기 위해 S3 버킷을 생성하고, 환경 변수를 설정 및 SSH Key Pair를 생성 후 클러스터를">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s Cluster on AWS with Kops">
 <meta property="og:url" content="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-kops-cluster/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
-<meta property="og:description" content="Kops 이용하여 Cluster 생성하기   https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/     를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다. S3 버킷 생성클러스터를 생성하기 위해 S">
+<meta property="og:description" content="Kops 이용하여 Cluster 생성하기AWS Settings and Installation를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다. S3 버킷 생성클러스터를 생성하기 위해 S3 버킷을 생성하고, 환경 변수를 설정 및 SSH Key Pair를 생성 후 클러스터를">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-kops-cluster/image/catslab.png">
-<meta property="og:updated_time" content="2019-04-25T03:51:20.518Z">
+<meta property="og:updated_time" content="2019-04-25T04:28:02.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s Cluster on AWS with Kops">
-<meta name="twitter:description" content="Kops 이용하여 Cluster 생성하기   https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/     를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다. S3 버킷 생성클러스터를 생성하기 위해 S">
+<meta name="twitter:description" content="Kops 이용하여 Cluster 생성하기AWS Settings and Installation를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다. S3 버킷 생성클러스터를 생성하기 위해 S3 버킷을 생성하고, 환경 변수를 설정 및 SSH Key Pair를 생성 후 클러스터를">
 <meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-kops-cluster/image/catslab.png">
     
 
@@ -161,25 +161,12 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="Kops-이용하여-Cluster-생성하기"><a href="#Kops-이용하여-Cluster-생성하기" class="headerlink" title="Kops 이용하여 Cluster 생성하기"></a>Kops 이용하여 Cluster 생성하기</h2>
-
-
-<p><a href="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/">https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/</a></p>
-
-
-
-
-<p>를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다.</p>
+            <h2 id="Kops-이용하여-Cluster-생성하기"><a href="#Kops-이용하여-Cluster-생성하기" class="headerlink" title="Kops 이용하여 Cluster 생성하기"></a>Kops 이용하여 Cluster 생성하기</h2><p><a href="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/">AWS Settings and Installation</a>를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다.</p>
 <h3 id="S3-버킷-생성"><a href="#S3-버킷-생성" class="headerlink" title="S3 버킷 생성"></a>S3 버킷 생성</h3><p>클러스터를 생성하기 위해 S3 버킷을 생성하고, 환경 변수를 설정 및 SSH Key Pair를 생성 후 클러스터를 생성합니다.  </p>
 <p>먼저 클러스터의 정보를 저장할 저장소가 필요한데, kops는 S3를 사용하므로 다음 명령어로 bucket을 생성하고 Versioning 기능도 활성화합니다.  </p>
 <hr>
-<p><code>~$ aws s3api create-bucket \
-   --bucket &lt;bucket name&gt; \
-   --region ap-northeast-2 \
-   --create-bucket-configuration LocationConstraint=ap-northeast-2</code></p>
-<p><code>~$ aws s3api put-bucket-versioning \
-   --bucket &lt;bucket name&gt; \
-   --versioning-configuration Status=Enabled</code></p>
+<p><code>~$ aws s3api create-bucket \</code><br><code>--bucket &lt;bucket name&gt; \</code><br><code>--region ap-northeast-2 \</code><br><code>--create-bucket-configuration LocationConstraint=ap-northeast-2</code></p>
+<p><code>~$ aws s3api put-bucket-versioning \</code><br><code>--bucket &lt;bucket name&gt; \</code><br><code>--versioning-configuration Status=Enabled</code></p>
 <hr>
 <p><img src="https://user-images.githubusercontent.com/47657715/56706446-fad74500-674f-11e9-8d80-bee33bb67dc9.png" alt="S3 버킷 생성 01"></p>
 <p><img src="https://user-images.githubusercontent.com/47657715/56706448-fc087200-674f-11e9-971d-16489148fb55.png" alt="S3 버킷 생성 02">  </p>
@@ -254,7 +241,7 @@
 
 
 
-    <a data-url="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-kops-cluster/" data-id="cjuw40xf2000vq59wi0c58zh0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-kops-cluster/" data-id="cjuw41ktv000vt69wtar9spxx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -332,17 +319,9 @@
         "dateCreated": "2019-04-27",
         "dateModified": "2019-04-25",
         "url": "https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-kops-cluster/",
-        "description": "Kops 이용하여 Cluster 생성하기
-
-
-https://cantapiya.github.io/catslab_blog/2019-04-25-k8s-AWS-settings/
-
-
-
-
-를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다.
-S3 버킷 생성클러스터를 생성하기 위해 S"
-        "wordCount": 580
+        "description": "Kops 이용하여 Cluster 생성하기AWS Settings and Installation를 통해 AWS 환경설정 및 kops, kubectl, AWS CLI의 설치가 완료되었으면 kops를 이용하여 클러스터 구축을 진행합니다.
+S3 버킷 생성클러스터를 생성하기 위해 S3 버킷을 생성하고, 환경 변수를 설정 및 SSH Key Pair를 생성 후 클러스터를"
+        "wordCount": 568
     }
 </script>
 
