@@ -1,169 +1,166 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-
-    
-
-    
-    <title>AWS Settings and Installation | CATSLAB BLOG</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-        <meta name="keywords" content>
-    
-    <meta name="description" content="AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.  “AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.   단계 1: Amazon Machine Image(AMI) 선택 “Ubuntu Server 18.04 LTS (HVM), SS">
+  <meta charset="utf-8">
+  
+  <title>AWS Settings and Installation | CATSLAB BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.  “AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.   단계 1: Amazon Machine Image(AMI) 선택 “Ubuntu Server 18.04 LTS (HVM), SS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AWS Settings and Installation">
 <meta property="og:url" content="https://cantapiya.github.io/catslab_blog/k8s-AWS-settings/index.html">
 <meta property="og:site_name" content="CATSLAB BLOG">
 <meta property="og:description" content="AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.  “AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.   단계 1: Amazon Machine Image(AMI) 선택 “Ubuntu Server 18.04 LTS (HVM), SS">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/k8s-AWS-settings/images/catslab.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56702818-0111f500-6741-11e9-8686-64f4a0b74c6a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56702865-2999ef00-6741-11e9-906a-7cc6ca81b5f5.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56702902-636af580-6741-11e9-8e28-c06131186a03.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703073-2fdc9b00-6742-11e9-8053-d57944fbb32c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703160-a2e61180-6742-11e9-8039-5f32696a4949.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703219-d7f26400-6742-11e9-82f1-e5c5156da25d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703279-0a03c600-6743-11e9-86e7-aa75f519a05e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703330-3c152800-6743-11e9-83b8-814bdac5cf1a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703430-b5147f80-6743-11e9-877e-2b769593d779.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703639-cc07a180-6744-11e9-91d8-3d8377ca6a66.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703670-eccff700-6744-11e9-9edb-52eb8ad429ff.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703795-6cf65c80-6745-11e9-85a6-f0d0d699fe68.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56703833-a7f89000-6745-11e9-8026-f1784b026778.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704144-fce8d600-6746-11e9-8f0a-98662c01f6be.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704158-0c681f00-6747-11e9-8b12-76aea3b616df.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704208-3cafbd80-6747-11e9-9f52-1c91591c9734.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704242-5a7d2280-6747-11e9-9c08-a18f0d3f7bc8.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704292-85677680-6747-11e9-8f89-3f189cb746fd.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704330-ab8d1680-6747-11e9-9880-a34c59cf5297.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704438-10e10780-6748-11e9-853a-0f54ea699a33.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704462-29512200-6748-11e9-9ea9-1e83d9ce0787.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56704465-2d7d3f80-6748-11e9-8ed0-04580845fd95.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56705214-0d9b4b00-674b-11e9-818f-0cd41c951930.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56705288-505d2300-674b-11e9-9e27-8ccf26f10a57.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56705373-95815500-674b-11e9-87b7-8eed8984bdc7.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/47657715/56705377-97e3af00-674b-11e9-8bdf-355ceba7dc78.png">
 <meta property="og:updated_time" content="2019-04-26T02:23:24.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AWS Settings and Installation">
 <meta name="twitter:description" content="AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.  “AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.   단계 1: Amazon Machine Image(AMI) 선택 “Ubuntu Server 18.04 LTS (HVM), SS">
-<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/k8s-AWS-settings/images/catslab.png">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/47657715/56702818-0111f500-6741-11e9-8686-64f4a0b74c6a.png">
+  
+    <link rel="alternate" href="/atom.xml" title="CATSLAB BLOG" type="application/atom+xml">
+  
+  <link rel="icon" href="/catslab_blog/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
     
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
 
-    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/catslab_blog/css/style.css">
 
-    
+  <script src="/catslab_blog/js/jquery-3.1.1.min.js"></script>
 
-    <link rel="stylesheet" href="/catslab_blog/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/catslab_blog/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/catslab_blog/libs/source-code-pro/styles.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/catslab_blog/css/bootstrap.css">
+  <link rel="stylesheet" href="/catslab_blog/css/fashion.css">
+  <link rel="stylesheet" href="/catslab_blog/css/glyphs.css">
 
-    <link rel="stylesheet" href="/catslab_blog/css/style.css">
-
-    <script src="/catslab_blog/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/catslab_blog/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/catslab_blog/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-
-
-    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
 </head>
 </html>
-<body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/catslab_blog/" class="logo"></a>
-                    </h1>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/catslab_blog/" title="CATSLAB BLOG" rel="home"> CATSLAB BLOG </a>
+            
+          </h1>
+          
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
                     
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/catslab_blog/">Home</a>
-                                </li>
-                            
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Installation/">Installation</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/k8s-Cluster-on-AWS-with-Kops/">k8s Cluster on AWS with Kops</a></li></ul></li></ul>
-                                    
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something...">
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/catslab_blog/',
-        CONTENT_URL: '/catslab_blog/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/catslab_blog/js/insight.js"></script>
-
-</div>
-                        </nav>
-                    </div>
-                </div>
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/catslab_blog/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/catslab_blog/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/catslab_blog/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/catslab_blog/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/catslab_blog/about">About</a> </li>
+                    
+              </ul>
             </div>
-        </div>
-    </div>
+          </nav>
+
+      </div>
+  </div>
 </header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-k8s-AWS-settings" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
-    <a class="page-title-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a>
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      AWS Settings and Installation
     </h1>
-</div>
+  
 
-                        <div class="main-body-content">
-                            <article id="post-k8s-AWS-settings" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+      </header>
     
-        <h1 class="article-title" itemprop="name">
-        AWS Settings and Installation
-        </h1>
-    
+    <div class="article-meta">
+      
+	<a href="/catslab_blog/k8s-AWS-settings/" class="article-date">
+	  <time datetime="2019-04-26T22:00:00.000Z" itemprop="datePublished">April 27, 2019</time>
+	</a>
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/catslab_blog/k8s-AWS-settings/" class="article-date">
-            <time datetime="2019-04-26T22:00:00.000Z" itemprop="datePublished">2019-04-27</time>
-        </a>
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a>, <a class="article-category-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
     </div>
-
-		
-
-                
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h2 id="AWS-인스턴스-생성-및-구동하기"><a href="#AWS-인스턴스-생성-및-구동하기" class="headerlink" title="AWS 인스턴스 생성 및 구동하기"></a>AWS 인스턴스 생성 및 구동하기</h2><p>먼저 AWS 루트 사용자 로그인을 진행합니다.<br>로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.</p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="AWS-인스턴스-생성-및-구동하기"><a href="#AWS-인스턴스-생성-및-구동하기" class="headerlink" title="AWS 인스턴스 생성 및 구동하기"></a>AWS 인스턴스 생성 및 구동하기</h2><p>먼저 AWS 루트 사용자 로그인을 진행합니다.<br>로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.</p>
 <ul>
 <li>“AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.</li>
 </ul>
@@ -270,239 +267,188 @@
 <p><img src="https://user-images.githubusercontent.com/47657715/56705373-95815500-674b-11e9-87b7-8eed8984bdc7.png" alt="AWS 환경설정 확인 01"></p>
 <p><img src="https://user-images.githubusercontent.com/47657715/56705377-97e3af00-674b-11e9-8bdf-355ceba7dc78.png" alt="AWS 환경설정 확인 02">  </p>
 
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://cantapiya.github.io/catslab_blog/k8s-AWS-settings/" data-id="cjuxlusp00026dq9w16gotdxh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+      
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "bychkim"
-        },
-        "headline": "AWS Settings and Installation",
-        "image": "https://cantapiya.github.io/catslab_blogimages/catslab.png",
-        "keywords": "",
-        "genre": "Kubernetes AWS Settings & Installation",
-        "datePublished": "2019-04-27",
-        "dateCreated": "2019-04-27",
-        "dateModified": "2019-04-26",
-        "url": "https://cantapiya.github.io/catslab_blog/k8s-AWS-settings/",
-        "description": "AWS 인스턴스 생성 및 구동하기먼저 AWS 루트 사용자 로그인을 진행합니다.로그인 후 인스턴스 생성을 위해 다음 과정을 진행합니다.
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a>, <a class="article-category-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a>
 
-“AWS Management Console - 솔루션 구축 : EC2 사용하여”를 진행합니다.
-
-
-단계 1: Amazon Machine Image(AMI) 선택
-“Ubuntu Server 18.04 LTS (HVM), SS"
-        "wordCount": 629
-    }
-</script>
-
-</article>
-
-    <section id="comments">
-    
+      
+      
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
 
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
     
-    </section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/Derek-tjhwang/CATS-LAB /" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-        
 <nav id="article-nav">
-    
-    
-        <a href="/catslab_blog/k8s-kops-cluster/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">k8s Cluster on AWS with Kops</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
+  
+  
+    <a href="/catslab_blog/k8s-kops-cluster/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">k8s Cluster on AWS with Kops</div>
+    </a>
+  
 </nav>
 
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
-    <div class="widgets-container">
-        
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Installation/">Installation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/k8s-Cluster-on-AWS-with-Kops/">k8s Cluster on AWS with Kops</a><span class="category-list-count">1</span></li></ul></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/04/">April 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/02/">February 2019</a><span class="archive-list-count">17</span></li></ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/catslab_blog/" class="logo"></a>
-                </h1>
-                <p>&copy; 2019 bychkim</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-            <div class="footer-plugins">
-              
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-인스턴스-생성-및-구동하기"><span class="nav-number">1.</span> <span class="nav-text">AWS 인스턴스 생성 및 구동하기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#단계-1-Amazon-Machine-Image-AMI-선택"><span class="nav-number">1.1.</span> <span class="nav-text">단계 1: Amazon Machine Image(AMI) 선택</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#단계-2-인스턴스-유형-선택"><span class="nav-number">2.</span> <span class="nav-text">단계 2: 인스턴스 유형 선택</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#단계-7-인스턴스-시작-검토"><span class="nav-number">3.</span> <span class="nav-text">단계 7: 인스턴스 시작 검토</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kops-설치-및-kubectl-설치"><span class="nav-number">4.</span> <span class="nav-text">kops 설치 및 kubectl 설치</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kops-설치"><span class="nav-number">4.1.</span> <span class="nav-text">kops 설치</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kubectl-설치"><span class="nav-number">4.2.</span> <span class="nav-text">kubectl 설치</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IAM-유저-생성"><span class="nav-number">5.</span> <span class="nav-text">IAM 유저 생성</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AWS-CLI-설치"><span class="nav-number">5.1.</span> <span class="nav-text">AWS CLI 설치</span></a></li></ol></li></ol>
     
-
-
-            </div>
-        </div>
     </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/catslab_blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/catslab_blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/catslab_blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/catslab_blog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/catslab_blog/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 CATSLAB BLOG All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
 </footer>
 
-        
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'https://cantapiya.github.io/catslab_blog/k8s-AWS-settings/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
 
 
-
-
-    
-        <script src="/catslab_blog/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/catslab_blog/libs/lightgallery/js/lg-video.min.js"></script>
+    <!-- headerblur min height -->
     
     
-        <script src="/catslab_blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+</script>
     
-    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
+  <link rel="stylesheet" href="/catslab_blog/fancybox/jquery.fancybox.css">
+  <script src="/catslab_blog/fancybox/jquery.fancybox.pack.js"></script>
 
-<!-- Custom Scripts -->
+
+<script src="/catslab_blog/js/script.js"></script>
+<script src="/catslab_blog/js/bootstrap.js"></script>
 <script src="/catslab_blog/js/main.js"></script>
 
-    </div>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
 </body>
 </html>
