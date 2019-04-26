@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>A.0 Trade Basic | CATSLAB BLOG</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="A.0. COZA package 및 필요한 모듈 및 함수 import 필수  BotContext 생성을 위해 import 합니다. 1from coza.bot import BotContext 거래소에 주문을 넣기 위한 Order 객체를 import 합니다. 1from coza.objects import Order 부가적으로 사용할 패키지 내의 객체나 함수 및">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A.0 Trade Basic">
+<meta property="og:url" content="https://cantapiya.github.io/catslab_blog/catslab-trade-00-base-post/index.html">
+<meta property="og:site_name" content="CATSLAB BLOG">
+<meta property="og:description" content="A.0. COZA package 및 필요한 모듈 및 함수 import 필수  BotContext 생성을 위해 import 합니다. 1from coza.bot import BotContext 거래소에 주문을 넣기 위한 Order 객체를 import 합니다. 1from coza.objects import Order 부가적으로 사용할 패키지 내의 객체나 함수 및">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://cantapiya.github.io/catslab_blog/catslab-trade-00-base-post/images/catslab.png">
+<meta property="og:updated_time" content="2019-04-26T02:22:19.095Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A.0 Trade Basic">
+<meta name="twitter:description" content="A.0. COZA package 및 필요한 모듈 및 함수 import 필수  BotContext 생성을 위해 import 합니다. 1from coza.bot import BotContext 거래소에 주문을 넣기 위한 Order 객체를 import 합니다. 1from coza.objects import Order 부가적으로 사용할 패키지 내의 객체나 함수 및">
+<meta name="twitter:image" content="https://cantapiya.github.io/catslab_blog/catslab-trade-00-base-post/images/catslab.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/catslab_blog/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/catslab_blog/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/catslab_blog/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/catslab_blog/css/style.css">
+
+    <script src="/catslab_blog/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/catslab_blog/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/catslab_blog/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css">
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/catslab_blog/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/catslab_blog/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Installation/">Installation</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/catslab_blog/categories/Kubernetes/k8s-Cluster-on-AWS-with-Kops/">k8s Cluster on AWS with Kops</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/catslab_blog/',
+        CONTENT_URL: '/catslab_blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/catslab_blog/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-catslab-trade-00-base-post" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        A.0 Trade Basic
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/catslab_blog/catslab-trade-00-base-post/" class="article-date">
+            <time datetime="2019-02-26T00:00:00.000Z" itemprop="datePublished">2019-02-26</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="A-0-COZA-package-및-필요한-모듈-및-함수-import"><a href="#A-0-COZA-package-및-필요한-모듈-및-함수-import" class="headerlink" title="A.0. COZA package 및 필요한 모듈 및 함수 import"></a>A.0. COZA package 및 필요한 모듈 및 함수 import</h2><ul>
+<li>필수</li>
+</ul>
+<p>BotContext 생성을 위해 import 합니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.bot <span class="keyword">import</span> BotContext</span><br></pre></td></tr></table></figure>
+<p>거래소에 주문을 넣기 위한 Order 객체를 import 합니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.objects <span class="keyword">import</span> Order</span><br></pre></td></tr></table></figure>
+<p>부가적으로 사용할 패키지 내의 객체나 함수 및 전략에서 이용할 TA들을 import 합니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> coza.ta <span class="keyword">import</span> (TA_NAME)</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://cantapiya.github.io/catslab_blog/catslab-trade-00-base-post/" data-id="cjuxlusny000adq9wr2zpkg8c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "bychkim"
+        },
+        "headline": "A.0 Trade Basic",
+        "image": "https://cantapiya.github.io/catslab_blogimages/catslab.png",
+        "keywords": "",
+        "genre": "CATS LAB Trade",
+        "datePublished": "2019-02-26",
+        "dateCreated": "2019-02-26",
+        "dateModified": "2019-04-26",
+        "url": "https://cantapiya.github.io/catslab_blog/catslab-trade-00-base-post/",
+        "description": "A.0. COZA package 및 필요한 모듈 및 함수 import
+필수
+
+BotContext 생성을 위해 import 합니다.
+1from coza.bot import BotContext
+거래소에 주문을 넣기 위한 Order 객체를 import 합니다.
+1from coza.objects import Order
+부가적으로 사용할 패키지 내의 객체나 함수 및"
+        "wordCount": 76
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/Derek-tjhwang/CATS-LAB /" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/catslab_blog/catslab-package-installation/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            CATS Lab Package Installation
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/catslab_blog/catslab-trade-01-botcontext-post/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">A.1 BotContext의 생성</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/">CATS LAB</a><span class="category-list-count">18</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Backtest/">Backtest</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Installation/">Installation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/CATS-LAB/Trade/">Trade</a><span class="category-list-count">11</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/">Kubernetes</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/AWS-Settings-Installation/">AWS Settings & Installation</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/catslab_blog/categories/Kubernetes/k8s-Cluster-on-AWS-with-Kops/">k8s Cluster on AWS with Kops</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/04/">April 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/catslab_blog/archives/2019/02/">February 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/catslab_blog/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 bychkim</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://cantapiya.github.io/catslab_blog/catslab-trade-00-base-post/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/catslab_blog/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/catslab_blog/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/catslab_blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/catslab_blog/js/main.js"></script>
+
+    </div>
+</body>
+</html>
